@@ -109,7 +109,13 @@ Map the extracted content to the standard 10-scene structure below. Decide which
 | 8 | `integrations` | `IntegrationsScene.jsx` | Connectors, integrations | Third-party tools it connects to |
 | 9 | `next-steps` | `NextStepsScene.jsx` | CTAs, checklist, demo link | Docs links, trial URLs, contact |
 
-**Note:** TeamScene and AgendaScene exist in the template already — do not regenerate them. Only create the content scenes.
+**Pre-built template scenes — do NOT regenerate these:**
+- `HeroScene.jsx` — update the four constants at the top (`SHOWCASE_TITLE_LINE1/2`, `SHOWCASE_SUBTITLE`, `SHOWCASE_BADGES`)
+- `TeamScene.jsx` — keep entirely as-is, driven by Settings
+- `AgendaScene.jsx` — keep entirely as-is, auto-generates from scene list with clickable tiles
+- `NextStepsScene.jsx` — already includes Back to Topics button and Click-Through Demo tile; only update the `actions` array with showcase-specific CTAs (trial URL, docs URL, contact URL). For the Click-Through Demo tile set `url: '__DEMO_URL__'` (template sentinel) and add `const FALLBACK_DEMO_URL = 'https://elastic.navattic.com/...'` if a Navattic link is known, then use `demoUrl || FALLBACK_DEMO_URL` in the render loop.
+
+Only create net-new scene files for the feature content (Challenge, WhatIsX, Architecture, etc.).
 
 ---
 
@@ -122,7 +128,7 @@ Create each planned scene file in `src/scenes/`. Follow these rules for every sc
 import { motion } from 'framer-motion'
 import { useTheme } from '../context/ThemeContext'
 
-function XxxScene({ onNext, scenes, allScenes, onNavigate }) {
+function XxxScene({ onNext, scenes, allScenes, onNavigate, demoUrl }) {
   const { theme } = useTheme()
   const isDark = theme === 'dark'
 
@@ -137,6 +143,8 @@ function XxxScene({ onNext, scenes, allScenes, onNavigate }) {
 
 export default XxxScene
 ```
+
+Most custom scenes won't use `demoUrl` — it is only consumed by `NextStepsScene`. Include it in the signature so React doesn't warn about unknown props if it's passed down.
 
 #### Non-negotiable rules
 - **Always** wrap in `<div className="scene">` — handles full-viewport centering and padding
@@ -170,9 +178,9 @@ import { faIconName } from '@fortawesome/free-solid-svg-icons'
 ```
 **Never** import from `@fortawesome/free-brands-svg-icons` — that package is not installed.
 Common safe icons: `faServer, faCloud, faShieldHalved, faRocket, faBolt, faChartLine,
-faBook, faGear, faCheck, faArrowRight, faArrowLeft, faPlay, faCircleCheck,
+faBook, faGear, faCheck, faArrowRight, faArrowLeft, faPlay, faCircleCheck, faCirclePlay,
 faTriangleExclamation, faCircleInfo, faFire, faBell, faEnvelope, faLink,
-faUsers, faCube, faTerminal, faKey, faPlug, faMagnifyingGlassChart`
+faUsers, faCube, faTerminal, faKey, faPlug, faMagnifyingGlassChart, faSlidersH`
 
 #### Standard Scene Header Pattern
 ```jsx
@@ -230,7 +238,17 @@ const scenes = [
 ]
 ```
 
-3. Ensure `CurrentSceneComponent` receives all props: `onNext`, `scenes`, `allScenes`, `onNavigate`
+3. Ensure `CurrentSceneComponent` receives all props:
+```jsx
+<CurrentSceneComponent
+  onNext={nextScene}
+  scenes={activeScenes}
+  allScenes={orderedScenes}
+  onNavigate={navigateToScene}
+  demoUrl={demoUrl}
+/>
+```
+The template's `App.jsx` already has `useDemoUrl` imported and wired — do not remove or re-add it. Just add your new scene imports and scene array entries.
 
 ---
 
@@ -251,7 +269,44 @@ npm run build
 
 ---
 
-### STEP 8 — Deploy via GitHub
+### STEP 8 — Update README.md
+
+Open `/Users/terrydupureur/Demos/elastic-showcases/README.md` and make the following updates:
+
+**1. Add a row to the Live Showcases table:**
+```markdown
+| **{Feature Name}** | {one-line description} | `{name}/` | *(deploy Vercel project — root dir: `{name}`)* |
+```
+
+**2. Add the new showcase folder to the Project Structure tree**, listing each scene file with a one-line comment describing its purpose:
+```
+└── {name}/                           # {Feature Name} showcase
+    └── src/scenes/
+        ├── HeroScene.jsx              # Scene 1  — Title & intro
+        ├── TeamScene.jsx              # Scene 2  — Presenter introductions
+        ├── AgendaScene.jsx            # Scene 3  — Clickable agenda grid
+        ├── {SceneName}.jsx            # Scene N  — {description}
+        └── NextStepsScene.jsx         # Scene N  — CTAs, demo link
+```
+
+**3. Add a `cd` block to the Running Locally section:**
+```bash
+# {Feature Name}
+cd {name}
+npm install
+npm run dev
+```
+
+**4. Add a checked item to the Roadmap:**
+```markdown
+- [x] {Feature Name} showcase
+```
+
+Save the file before proceeding to Step 9.
+
+---
+
+### STEP 9 — Deploy via GitHub
 
 ```bash
 cd /Users/terrydupureur/Demos/elastic-showcases
@@ -267,11 +322,11 @@ Vercel auto-deploys on push to `main`. The new showcase will be live within ~60 
 2. Import the `elastic-showcases` GitHub repo
 3. Set **Root Directory** to `{name}` (the new showcase folder)
 4. Set the project name to `elastic-{name}-showcase`
-5. Deploy
+5. Deploy — then update the Vercel URL in `README.md` Live Showcases table and push again
 
 ---
 
-### STEP 9 — Confirm and Report
+### STEP 10 — Confirm and Report
 
 Return a summary to the user:
 
@@ -281,11 +336,13 @@ Return a summary to the user:
 📁 Project:     /Users/terrydupureur/Demos/elastic-showcases/{name}/
 🎬 Scenes:      [list the scene titles]
 🔨 Build:       Passed
+📝 README:      Updated — Live Showcases table + Project Structure + Roadmap
 🚀 GitHub:      Pushed to main — Vercel auto-deploy triggered
 
 ⚠️  Action needed: Create a new Vercel project for this showcase:
     → vercel.com/dashboard → Add New Project → Root Directory: {name}
     → Project name: elastic-{name}-showcase
+    → Once live, update the Vercel URL in README.md and push again
 ```
 
 ---
@@ -301,6 +358,12 @@ Before pushing, verify:
 - [ ] `npm run build` exits with zero errors and zero warnings about missing modules
 - [ ] HeroScene shows the correct feature name and value proposition
 - [ ] TeamScene is present and functional (driven by Settings — no hardcoded members)
+- [ ] AgendaScene tiles are clickable and navigate to the correct scenes
+- [ ] NextStepsScene has a Back to Topics button that returns to the Agenda slide
+- [ ] NextStepsScene has a Click-Through Demo tile (uses `__DEMO_URL__` sentinel + `demoUrl || FALLBACK_DEMO_URL` in render loop)
+- [ ] README.md Live Showcases table includes the new showcase row
+- [ ] README.md Project Structure tree includes the new showcase folder and scenes
+- [ ] README.md Roadmap includes the new showcase as a checked item
 
 ---
 
