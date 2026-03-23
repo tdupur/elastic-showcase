@@ -11,7 +11,7 @@ These showcases are designed to be used in customer conversations, demos, and en
 | Showcase | Description | Folder | Vercel URL |
 |---|---|---|---|
 | **AutoOps via Cloud Connect** | How self-managed clusters connect to AutoOps on Elastic Cloud without migration | `autoops-cloud-connect/` | [elastic-autoops-showcase.vercel.app](https://elastic-autoops-showcase.vercel.app) |
-| **Elastic Cloud Serverless** | Overview, benefits, project types, and Hosted vs Serverless deployment comparison | `elasticsearch-serverless/` | *(deploy Vercel project — root dir: `elasticsearch-serverless`)* |
+| **Elastic Cloud Serverless** | Overview, benefits, project types, and Hosted vs Serverless deployment comparison | `elasticsearch-serverless/` | [elastic-serverless-showcase.vercel.app](https://elastic-serverless-showcase.vercel.app) |
 
 ---
 
