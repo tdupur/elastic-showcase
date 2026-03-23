@@ -15,12 +15,14 @@ import InstallationScene from './scenes/InstallationScene'
 import MonitoringScene from './scenes/MonitoringScene'
 import NotificationsScene from './scenes/NotificationsScene'
 import NextStepsScene from './scenes/NextStepsScene'
+import TeamScene from './scenes/TeamScene'
 import Navigation from './components/Navigation'
 import ProgressBar from './components/ProgressBar'
 import SceneSettings, { useEnabledScenes } from './components/SceneSettings'
 
 const scenes = [
   { id: 'hero', component: HeroScene, title: 'Introduction', hideFromAgenda: true },
+  { id: 'team', component: TeamScene, title: 'Team Introductions', hideFromAgenda: true },
   { id: 'agenda', component: AgendaScene, title: 'Agenda', hideFromAgenda: true },
   { id: 'challenge', component: ChallengeScene, title: 'The Problem', description: 'Reactive ops & alert fatigue', duration: '3 min' },
   { id: 'what-is-autoops', component: WhatIsAutoOpsScene, title: 'What is AutoOps?', description: 'Automated cluster intelligence', duration: '5 min' },
