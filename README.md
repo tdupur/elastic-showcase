@@ -239,11 +239,79 @@ vercel --prod
 
 ---
 
+## Team Onboarding — Getting the `/showcase` Skill
+
+The `/showcase` Claude Code skill lets any team member generate a complete, deployed interactive showcase from just a doc URL or blog post — no manual coding required.
+
+### Prerequisites
+
+- [Claude Code](https://claude.ai/code) installed and authenticated
+- [Node.js](https://nodejs.org/) 18+ and npm
+- [Git](https://git-scm.com/) + [GitHub CLI](https://cli.github.com/) (`brew install gh`)
+- A free [Vercel](https://vercel.com/) account (for deployment)
+
+### Install in 3 steps
+
+**1. Clone this repo**
+```bash
+git clone https://github.com/tfrenchy/elastic-showcases.git
+cd elastic-showcases
+```
+
+**2. Run the setup script**
+```bash
+./setup.sh
+```
+
+This installs the `/showcase` skill into your Claude Code environment automatically. That's it.
+
+**3. Verify — start a new Claude Code session and type `/showcase`**
+
+You should see the skill listed and available for use.
+
+---
+
+### Using the `/showcase` Skill
+
+```bash
+/showcase --objective "Elastic Security AI Assistant" \
+          --url "https://www.elastic.co/docs/..." \
+          --name "security-ai-assistant"
+```
+
+Or naturally in conversation:
+```
+/showcase Build me a showcase for Elastic Observability SLOs using https://www.elastic.co/docs/...
+```
+
+**What happens automatically:**
+1. Fetches and analyzes the source URL(s) via the Elastic docs MCP tool
+2. Scaffolds a new project from `_template/`
+3. Generates all scene files (Hero, Agenda, Challenge, Architecture, Installation, Capabilities, Next Steps, and more)
+4. Wires navigation, builds, and verifies zero errors
+5. Pushes to GitHub → Vercel auto-deploys within ~60 seconds
+
+**One manual step after generation:** Create a new Vercel project pointing to the new subfolder (the skill tells you exactly what to set).
+
+---
+
+### Updating the Skill
+
+When the skill is updated in this repo, pull and re-run setup:
+```bash
+git pull
+./setup.sh
+```
+
+---
+
 ## Roadmap
 
-- [ ] Vercel deployment pipeline per showcase
-- [ ] Agent Skill (`/showcase`) — automated showcase generation from a doc URL or blog post
-- [ ] Additional showcases (Elastic Security AI Assistant, EIS, Elastic Observability, …)
+- [x] AutoOps via Cloud Connect showcase
+- [x] `_template/` reusable scaffold
+- [x] `/showcase` Agent Skill — automated showcase generation from doc URL or blog post
+- [x] GitHub → Vercel auto-deploy pipeline
+- [ ] Additional showcases: Elastic Security AI Assistant, EIS, Elastic Observability SLOs, …
 
 ---
 
