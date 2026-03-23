@@ -4,41 +4,42 @@ import { useTheme } from '../context/ThemeContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight, faArrowLeft, faBook, faFlask, faComments, faCirclePlay } from '@fortawesome/free-solid-svg-icons'
 
-// TODO: Replace with your feature-specific next steps
 const actions = [
   {
     icon: faFlask,
     color: '#48EFCF',
-    title: 'Try It Now',
-    description: 'Replace with your primary CTA — e.g. a trial, hands-on lab, or setup guide.',
-    cta: 'Get Started',
-    url: null,
+    title: 'Start Your Free Trial',
+    description: 'Create a serverless project on Elastic Cloud today — no credit card required. Elasticsearch, Observability, or Security.',
+    cta: 'Try Serverless Free',
+    url: 'https://cloud.elastic.co/registration',
   },
   {
     icon: faBook,
     color: '#0B64DD',
-    title: 'Read the Docs',
-    description: 'Link to the relevant Elastic documentation for this feature.',
+    title: 'Read the Serverless Docs',
+    description: 'Deep-dive into Elastic Cloud Serverless: architecture, project types, pricing, and configuration options.',
     cta: 'View Docs',
-    url: 'https://www.elastic.co/docs',
+    url: 'https://www.elastic.co/docs/deploy-manage/deploy/elastic-cloud/serverless',
   },
   {
     icon: faComments,
     color: '#F04E98',
     title: 'Talk to Your Elastic Team',
-    description: 'Your Elastic team can help you plan and implement this feature.',
+    description: 'Your Elastic team can help you evaluate Serverless for your workloads and walk through migration options.',
     cta: 'Contact Us',
-    url: null,
+    url: 'https://www.elastic.co/contact',
   },
   {
     icon: faCirclePlay,
     color: '#FF957D',
     title: 'Click-Through Demo',
-    description: 'Walk through this feature interactively at your own pace. Set the URL via Settings → Click-Through Demo URL.',
+    description: 'Walk through Elastic Cloud Serverless interactively at your own pace — no setup required.',
     cta: 'Launch Demo',
-    url: '__DEMO_URL__', // resolved at render time from demoUrl prop / Settings
+    url: '__DEMO_URL__', // resolved at render time; falls back to hardcoded Navattic URL
   },
 ]
+
+const FALLBACK_DEMO_URL = 'https://elastic.navattic.com/ga190nvy'
 
 const cycleColors = ['#48EFCF', '#0B64DD', '#F04E98', '#FF957D', '#FEC514', '#48EFCF']
 
@@ -67,7 +68,7 @@ function NextStepsScene({ onNavigate, scenes, demoUrl }) {
 
         <div className="space-y-4">
           {actions.map((action, index) => {
-            const resolvedUrl = action.url === '__DEMO_URL__' ? (demoUrl || null) : action.url
+            const resolvedUrl = action.url === '__DEMO_URL__' ? (demoUrl || FALLBACK_DEMO_URL) : action.url
             return (
               <motion.div
                 key={action.title}

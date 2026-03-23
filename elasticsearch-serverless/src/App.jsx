@@ -9,8 +9,11 @@ import HeroScene from './scenes/HeroScene'
 import TeamScene from './scenes/TeamScene'
 import AgendaScene from './scenes/AgendaScene'
 import NextStepsScene from './scenes/NextStepsScene'
-// TODO: Import your feature scenes here
-// import MyFeatureScene from './scenes/MyFeatureScene'
+import ChallengeScene from './scenes/ChallengeScene'
+import WhatIsServerlessScene from './scenes/WhatIsServerlessScene'
+import BenefitsScene from './scenes/BenefitsScene'
+import ProjectTypesScene from './scenes/ProjectTypesScene'
+import ComparisonScene from './scenes/ComparisonScene'
 import Navigation from './components/Navigation'
 import ProgressBar from './components/ProgressBar'
 import SceneSettings, { useEnabledScenes, useDemoUrl } from './components/SceneSettings'
@@ -26,8 +29,12 @@ const scenes = [
   { id: 'hero', component: HeroScene, title: 'Introduction', hideFromAgenda: true },
   { id: 'team', component: TeamScene, title: 'Team Introductions', hideFromAgenda: true },
   { id: 'agenda', component: AgendaScene, title: 'Agenda', hideFromAgenda: true },
-  // { id: 'my-feature', component: MyFeatureScene, title: 'My Feature', description: 'What it does', duration: '5 min' },
-  { id: 'next-steps', component: NextStepsScene, title: 'Next Steps', description: 'Your path forward' },
+  { id: 'challenge', component: ChallengeScene, title: 'The Challenge', description: 'Why infrastructure gets in the way', duration: '3 min' },
+  { id: 'what-is-serverless', component: WhatIsServerlessScene, title: 'What Is Serverless?', description: 'Overview & architecture', duration: '4 min' },
+  { id: 'benefits', component: BenefitsScene, title: 'Key Benefits', description: 'Six reasons to go serverless', duration: '4 min' },
+  { id: 'project-types', component: ProjectTypesScene, title: 'Project Types', description: 'Search, Observability, and Security', duration: '3 min' },
+  { id: 'comparison', component: ComparisonScene, title: 'Serverless vs Hosted', description: 'Side-by-side deployment comparison', duration: '4 min' },
+  { id: 'next-steps', component: NextStepsScene, title: 'Next Steps', description: 'Start your serverless journey', duration: '2 min' },
 ]
 
 const allScenes = scenes
