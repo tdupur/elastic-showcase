@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { useTheme } from '../context/ThemeContext'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 // Color palette that cycles based on position in the agenda
 const colorPalette = [
@@ -11,17 +13,18 @@ const colorPalette = [
   '#FEC514',  // Yellow
 ]
 
-function AgendaScene({ scenes = [] }) {
+function AgendaScene({ scenes = [], onNavigate }) {
   const { theme } = useTheme()
   const isDark = theme === 'dark'
   const [hoveredItem, setHoveredItem] = useState(null)
 
-  // Filter out scenes that shouldn't appear in the agenda
-  // Colors are assigned based on position, cycling through the palette
+  // Preserve each scene's original index in the scenes array for navigation
   const agendaItems = scenes
-    .filter(scene => !scene.hideFromAgenda)
-    .map((scene, index) => ({
+    .map((scene, sceneIndex) => ({ scene, sceneIndex }))
+    .filter(({ scene }) => !scene.hideFromAgenda)
+    .map(({ scene, sceneIndex }, index) => ({
       id: index + 1,
+      sceneIndex,
       title: scene.title,
       description: scene.description || '',
       color: colorPalette[index % colorPalette.length],
@@ -53,10 +56,11 @@ function AgendaScene({ scenes = [] }) {
           {agendaItems.map((item, index) => (
             <motion.div
               key={item.id}
+              onClick={() => onNavigate?.(item.sceneIndex)}
               className={`relative p-5 rounded-xl border overflow-hidden cursor-pointer group ${
-                isDark 
-                  ? 'bg-white/[0.03] border-white/10' 
-                  : 'bg-white/80 border-elastic-dev-blue/10'
+                isDark
+                  ? 'bg-white/[0.03] border-white/10 hover:border-white/25'
+                  : 'bg-white/80 border-elastic-dev-blue/10 hover:border-elastic-dev-blue/30'
               }`}
               initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -64,6 +68,7 @@ function AgendaScene({ scenes = [] }) {
               onMouseEnter={() => setHoveredItem(item.id)}
               onMouseLeave={() => setHoveredItem(null)}
               whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
               {/* Left accent bar */}
               <motion.div
@@ -116,6 +121,16 @@ function AgendaScene({ scenes = [] }) {
                     {item.duration}
                   </div>
                 )}
+
+                {/* Navigate arrow — visible on hover */}
+                <motion.div
+                  className="flex-shrink-0"
+                  animate={{ opacity: hoveredItem === item.id ? 1 : 0, x: hoveredItem === item.id ? 0 : -4 }}
+                  transition={{ duration: 0.15 }}
+                  style={{ color: item.color }}
+                >
+                  <FontAwesomeIcon icon={faArrowRight} className="text-sm" />
+                </motion.div>
               </div>
             </motion.div>
           ))}
