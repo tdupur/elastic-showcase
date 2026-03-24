@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { motion, AnimatePresence, Reorder } from 'framer-motion'
+import { motion, AnimatePresence, Reorder, useDragControls } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faGear, faXmark, faEye, faEyeSlash, faRotateLeft, faGripVertical, faClock, faCheck,
@@ -351,7 +351,7 @@ function resizeImage(file, maxSize = 200) {
 }
 
 // Team Member Editor Component
-function TeamMemberEditor({ member, index, onUpdate, onDelete, isDark }) {
+function TeamMemberEditor({ member, index, onUpdate, onDelete, isDark, onDragStart }) {
   const [isExpanded, setIsExpanded] = useState(false)
   const [isUploading, setIsUploading] = useState(false)
   const [imageError, setImageError] = useState(false)
@@ -416,12 +416,25 @@ function TeamMemberEditor({ member, index, onUpdate, onDelete, isDark }) {
       isDark ? 'bg-white/[0.03] border-white/10' : 'bg-elastic-dev-blue/[0.02] border-elastic-dev-blue/10'
     }`}>
       {/* Header - always visible */}
-      <div 
+      <div
         className={`p-3 flex items-center gap-3 cursor-pointer ${
           isDark ? 'hover:bg-white/5' : 'hover:bg-elastic-dev-blue/5'
         }`}
         onClick={() => setIsExpanded(!isExpanded)}
       >
+        {/* Drag Handle */}
+        {onDragStart && (
+          <div
+            className={`cursor-grab active:cursor-grabbing p-1 touch-none flex-shrink-0 ${
+              isDark ? 'text-white/30 hover:text-white/60' : 'text-elastic-dev-blue/30 hover:text-elastic-dev-blue/60'
+            }`}
+            onPointerDown={(e) => { e.stopPropagation(); onDragStart(e) }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <FontAwesomeIcon icon={faGripVertical} />
+          </div>
+        )}
+
         {/* Avatar preview */}
         {hasPhoto ? (
           <img 
@@ -651,6 +664,28 @@ function TeamMemberEditor({ member, index, onUpdate, onDelete, isDark }) {
   )
 }
 
+// Reorderable wrapper for TeamMemberEditor
+function TeamMemberReorderItem({ member, index, onUpdate, onDelete, isDark }) {
+  const dragControls = useDragControls()
+  return (
+    <Reorder.Item
+      value={member}
+      dragListener={false}
+      dragControls={dragControls}
+      whileDrag={{ scale: 1.02, boxShadow: '0 10px 30px rgba(0,0,0,0.3)' }}
+    >
+      <TeamMemberEditor
+        member={member}
+        index={index}
+        onUpdate={onUpdate}
+        onDelete={onDelete}
+        isDark={isDark}
+        onDragStart={(e) => dragControls.start(e)}
+      />
+    </Reorder.Item>
+  )
+}
+
 // Team Editor Panel
 function TeamEditorPanel({ isDark }) {
   const { teamConfig, updateTeamConfig, resetTeamConfig } = useTeamConfig()
@@ -672,6 +707,10 @@ function TeamEditorPanel({ isDark }) {
 
   const handleMemberDelete = (index) => {
     const newMembers = teamConfig.members.filter((_, i) => i !== index)
+    updateTeamConfig({ ...teamConfig, members: newMembers })
+  }
+
+  const handleMemberReorder = (newMembers) => {
     updateTeamConfig({ ...teamConfig, members: newMembers })
   }
 
@@ -772,9 +811,9 @@ function TeamEditorPanel({ isDark }) {
           </button>
         </div>
 
-        <div className="space-y-2">
+        <Reorder.Group axis="y" values={teamConfig.members} onReorder={handleMemberReorder} className="space-y-2">
           {teamConfig.members.map((member, index) => (
-            <TeamMemberEditor
+            <TeamMemberReorderItem
               key={member.id}
               member={member}
               index={index}
@@ -784,16 +823,17 @@ function TeamEditorPanel({ isDark }) {
             />
           ))}
 
-          {teamConfig.members.length === 0 && (
-            <div className={`text-center py-8 rounded-xl border-2 border-dashed ${
-              isDark ? 'border-white/10 text-white/30' : 'border-elastic-dev-blue/10 text-elastic-dev-blue/30'
-            }`}>
-              <FontAwesomeIcon icon={faUsers} className="text-2xl mb-2" />
-              <p className="text-sm">No team members yet</p>
-              <p className="text-xs mt-1">Click "Add Member" to get started</p>
-            </div>
-          )}
-        </div>
+        </Reorder.Group>
+
+        {teamConfig.members.length === 0 && (
+          <div className={`text-center py-8 rounded-xl border-2 border-dashed ${
+            isDark ? 'border-white/10 text-white/30' : 'border-elastic-dev-blue/10 text-elastic-dev-blue/30'
+          }`}>
+            <FontAwesomeIcon icon={faUsers} className="text-2xl mb-2" />
+            <p className="text-sm">No team members yet</p>
+            <p className="text-xs mt-1">Click "Add Member" to get started</p>
+          </div>
+        )}
       </div>
 
       {/* Import/Export */}
