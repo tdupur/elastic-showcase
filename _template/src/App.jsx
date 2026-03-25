@@ -6,6 +6,7 @@ import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
 import { useTheme } from './context/ThemeContext'
 import ErrorBoundary from './components/ErrorBoundary'
 import HeroScene from './scenes/HeroScene'
+import HeroStaticScene from './scenes/HeroStaticScene'
 import TeamScene from './scenes/TeamScene'
 import AgendaScene from './scenes/AgendaScene'
 import NextStepsScene from './scenes/NextStepsScene'
@@ -24,8 +25,10 @@ import SceneSettings, { useEnabledScenes, useDemoUrl } from './components/SceneS
 // - hideFromAgenda: true to hide from the agenda slide
 const scenes = [
   { id: 'hero', component: HeroScene, title: 'Introduction', hideFromAgenda: true },
+  { id: 'hero-static', component: HeroStaticScene, title: 'Introduction (Static)', hideFromAgenda: true, defaultHidden: true },
   { id: 'team', component: TeamScene, title: 'Team Introductions', hideFromAgenda: true },
   { id: 'agenda', component: AgendaScene, title: 'Agenda', hideFromAgenda: true },
+  // TODO: Add your feature scenes here
   // { id: 'my-feature', component: MyFeatureScene, title: 'My Feature', description: 'What it does', duration: '5 min' },
   { id: 'next-steps', component: NextStepsScene, title: 'Next Steps', description: 'Your path forward' },
 ]

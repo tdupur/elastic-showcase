@@ -18,14 +18,14 @@ export function useEnabledScenes(allScenes) {
         return JSON.parse(saved)
       } catch {
         return {
-          enabledIds: allScenes.map(s => s.id),
+          enabledIds: allScenes.filter(s => !s.defaultHidden).map(s => s.id),
           order: allScenes.map(s => s.id),
           durations: {}
         }
       }
     }
     return {
-      enabledIds: allScenes.map(s => s.id),
+      enabledIds: allScenes.filter(s => !s.defaultHidden).map(s => s.id),
       order: allScenes.map(s => s.id),
       durations: {}
     }
@@ -58,7 +58,7 @@ export function useEnabledScenes(allScenes) {
 
   const resetToDefault = () => {
     setConfig({
-      enabledIds: allScenes.map(s => s.id),
+      enabledIds: allScenes.filter(s => !s.defaultHidden).map(s => s.id),
       order: allScenes.map(s => s.id),
       durations: {}
     })
