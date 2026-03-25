@@ -12,6 +12,7 @@ These showcases are designed to be used in customer conversations, demos, and en
 |---|---|---|---|
 | **AutoOps via Cloud Connect** | How self-managed clusters connect to AutoOps on Elastic Cloud without migration | `autoops-cloud-connect/` | [elastic-autoops-showcase.vercel.app](https://elastic-autoops-showcase.vercel.app) |
 | **Elastic Cloud Serverless** | Overview, benefits, project types, and Hosted vs Serverless deployment comparison | `elasticsearch-serverless/` | [elastic-serverless-showcase.vercel.app](https://elastic-serverless-showcase.vercel.app) |
+| **Elastic Deployment Options Comparison** | Self-Managed vs Cloud Hosted vs Serverless — shared responsibility model, feature comparison, and decision guide | `elastic-deployment-options/` | *(deploy Vercel project — root dir: `elastic-deployment-options`)* |
 
 ---
 
@@ -69,17 +70,29 @@ elastic-showcases/
 │       ├── NotificationsScene.jsx     # Scene 10 — 7 notification connectors
 │       └── NextStepsScene.jsx         # Scene 11 — CTAs, checklist, demo link
 │
-└── elasticsearch-serverless/         # Elastic Cloud Serverless showcase
+├── elasticsearch-serverless/         # Elastic Cloud Serverless showcase
+│   └── src/scenes/
+│       ├── HeroScene.jsx              # Scene 1  — Title & intro
+│       ├── TeamScene.jsx              # Scene 2  — Presenter introductions
+│       ├── AgendaScene.jsx            # Scene 3  — Clickable agenda grid
+│       ├── ChallengeScene.jsx         # Scene 4  — Infrastructure management pain
+│       ├── WhatIsServerlessScene.jsx  # Scene 5  — Overview & architecture
+│       ├── BenefitsScene.jsx          # Scene 6  — 6 key benefits
+│       ├── ProjectTypesScene.jsx      # Scene 7  — Search, Observability, Security
+│       ├── ComparisonScene.jsx        # Scene 8  — Serverless vs Cloud Hosted table
+│       └── NextStepsScene.jsx         # Scene 9  — Trial, docs, demo link
+│
+└── elastic-deployment-options/       # Elastic Deployment Options Comparison showcase
     └── src/scenes/
         ├── HeroScene.jsx              # Scene 1  — Title & intro
         ├── TeamScene.jsx              # Scene 2  — Presenter introductions
         ├── AgendaScene.jsx            # Scene 3  — Clickable agenda grid
-        ├── ChallengeScene.jsx         # Scene 4  — Infrastructure management pain
-        ├── WhatIsServerlessScene.jsx  # Scene 5  — Overview & architecture
-        ├── BenefitsScene.jsx          # Scene 6  — 6 key benefits
-        ├── ProjectTypesScene.jsx      # Scene 7  — Search, Observability, Security
-        ├── ComparisonScene.jsx        # Scene 8  — Serverless vs Cloud Hosted table
-        └── NextStepsScene.jsx         # Scene 9  — Trial, docs, demo link
+        ├── ChallengeScene.jsx         # Scene 4  — Why choosing wrong model costs you
+        ├── DeploymentOverviewScene.jsx # Scene 5  — Three ways to run Elastic
+        ├── SharedResponsibilityScene.jsx # Scene 6  — Who owns what (interactive matrix)
+        ├── FeatureComparisonScene.jsx  # Scene 7  — Feature availability by deployment
+        ├── WhenToChooseScene.jsx       # Scene 8  — Decision guide for each model
+        └── NextStepsScene.jsx          # Scene 9  — Trial, docs, contact
 ```
 
 ---
@@ -96,6 +109,11 @@ npm run dev
 
 # Elastic Cloud Serverless
 cd elasticsearch-serverless
+npm install
+npm run dev
+
+# Elastic Deployment Options Comparison
+cd elastic-deployment-options
 npm install
 npm run dev
 ```
@@ -351,6 +369,7 @@ git pull
 - [x] `/showcase` Agent Skill — automated showcase generation from doc URL or blog post
 - [x] GitHub → Vercel auto-deploy pipeline
 - [x] Settings panel — scene toggle/reorder, team config, demo URL
+- [x] Elastic Deployment Options Comparison showcase
 - [ ] Additional showcases: Elastic Security AI Assistant, EIS, Elastic Observability SLOs, …
 
 ---
