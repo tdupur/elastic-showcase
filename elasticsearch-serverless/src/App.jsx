@@ -14,7 +14,6 @@ import WhatIsServerlessScene from './scenes/WhatIsServerlessScene'
 import BenefitsScene from './scenes/BenefitsScene'
 import ProjectTypesScene from './scenes/ProjectTypesScene'
 import ComparisonScene from './scenes/ComparisonScene'
-import SearchAILakeScene from './scenes/SearchAILakeScene'
 import Navigation from './components/Navigation'
 import ProgressBar from './components/ProgressBar'
 import SceneSettings, { useEnabledScenes, useDemoUrl } from './components/SceneSettings'
@@ -35,7 +34,6 @@ const scenes = [
   { id: 'benefits', component: BenefitsScene, title: 'Key Benefits', description: 'Six reasons to go serverless', duration: '4 min' },
   { id: 'project-types', component: ProjectTypesScene, title: 'Project Types', description: 'Search, Observability, and Security', duration: '3 min' },
   { id: 'comparison', component: ComparisonScene, title: 'Serverless vs Hosted', description: 'Side-by-side deployment comparison', duration: '4 min' },
-  { id: 'search-ai-lake', component: SearchAILakeScene, title: 'Search AI Lake', description: 'Storage architecture & performance settings', duration: '4 min' },
   { id: 'next-steps', component: NextStepsScene, title: 'Next Steps', description: 'Start your serverless journey', duration: '2 min' },
 ]
 

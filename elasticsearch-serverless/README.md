@@ -135,9 +135,3 @@ vercel --prod
 ```
 
 Vercel auto-detects Vite and deploys. Each showcase gets its own URL.
-
----
-
-## Latest Changes
-
-- **Search AI Lake scene added** — New slide covering the two-layer Search AI Lake storage architecture (cache layer + general storage), search-ready data composition, and all three configurable settings: Search Power (On-demand / Performant / High-throughput), Search Boost Window, and Data Retention. Content sourced from the official Elastic docs project-settings page.
