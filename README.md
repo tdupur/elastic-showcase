@@ -13,7 +13,7 @@ These showcases are designed to be used in customer conversations, demos, and en
 | **AutoOps via Cloud Connect** | How self-managed clusters connect to AutoOps on Elastic Cloud without migration | `autoops-cloud-connect/` | [elastic-autoops-showcase.vercel.app](https://elastic-autoops-showcase.vercel.app) |
 | **Elastic Cloud Serverless** | Overview, benefits, project types, and Hosted vs Serverless deployment comparison | `elasticsearch-serverless/` | [elastic-serverless-showcase.vercel.app](https://elastic-serverless-showcase.vercel.app) |
 | **Elastic Deployment Options Comparison** | Self-Managed vs Cloud Hosted vs Serverless — shared responsibility model, feature comparison, and decision guide | `elastic-deployment-options/` | [elastic-stack-deployment-options-showcase.vercel.app](https://elastic-stack-deployment-options-showcase.vercel.app) |
-| **Search AI Serverless** | Elasticsearch Serverless — Search AI Lake architecture, Search Power settings, vector search, and zero-ops deployment | `elastic-search-ai-serverless/` | *(deploy Vercel project — root dir: `elastic-search-ai-serverless`)* |
+| **Search AI Serverless** | Elasticsearch Serverless — Search AI Lake architecture, Search Power settings, vector search, and zero-ops deployment | `elastic-search-ai-serverless/` | [elastic-search-ai-serverless.vercel.app](https://elastic-search-ai-serverless.vercel.app) |
 
 ---
 
