@@ -13,6 +13,7 @@ These showcases are designed to be used in customer conversations, demos, and en
 | **AutoOps via Cloud Connect** | How self-managed clusters connect to AutoOps on Elastic Cloud without migration | `autoops-cloud-connect/` | [elastic-autoops-showcase.vercel.app](https://elastic-autoops-showcase.vercel.app) |
 | **Elastic Cloud Serverless** | Overview, benefits, project types, and Hosted vs Serverless deployment comparison | `elasticsearch-serverless/` | [elastic-serverless-showcase.vercel.app](https://elastic-serverless-showcase.vercel.app) |
 | **Elastic Deployment Options Comparison** | Self-Managed vs Cloud Hosted vs Serverless — shared responsibility model, feature comparison, and decision guide | `elastic-deployment-options/` | [elastic-stack-deployment-options-showcase.vercel.app](https://elastic-stack-deployment-options-showcase.vercel.app) |
+| **Search AI Serverless** | Elasticsearch Serverless — Search AI Lake architecture, Search Power settings, vector search, and zero-ops deployment | `elastic-search-ai-serverless/` | *(deploy Vercel project — root dir: `elastic-search-ai-serverless`)* |
 
 ---
 
@@ -82,17 +83,30 @@ elastic-showcases/
 │       ├── ComparisonScene.jsx        # Scene 8  — Serverless vs Cloud Hosted table
 │       └── NextStepsScene.jsx         # Scene 9  — Trial, docs, demo link
 │
-└── elastic-deployment-options/       # Elastic Deployment Options Comparison showcase
+├── elastic-deployment-options/       # Elastic Deployment Options Comparison showcase
+│   └── src/scenes/
+│       ├── HeroScene.jsx              # Scene 1  — Title & intro
+│       ├── TeamScene.jsx              # Scene 2  — Presenter introductions
+│       ├── AgendaScene.jsx            # Scene 3  — Clickable agenda grid
+│       ├── ChallengeScene.jsx         # Scene 4  — Why choosing wrong model costs you
+│       ├── DeploymentOverviewScene.jsx # Scene 5  — Three ways to run Elastic
+│       ├── SharedResponsibilityScene.jsx # Scene 6  — Who owns what (interactive matrix)
+│       ├── FeatureComparisonScene.jsx  # Scene 7  — Feature availability by deployment
+│       ├── WhenToChooseScene.jsx       # Scene 8  — Decision guide for each model
+│       └── NextStepsScene.jsx          # Scene 9  — Trial, docs, contact
+│
+└── elastic-search-ai-serverless/     # Search AI Serverless showcase
     └── src/scenes/
-        ├── HeroScene.jsx              # Scene 1  — Title & intro
-        ├── TeamScene.jsx              # Scene 2  — Presenter introductions
-        ├── AgendaScene.jsx            # Scene 3  — Clickable agenda grid
-        ├── ChallengeScene.jsx         # Scene 4  — Why choosing wrong model costs you
-        ├── DeploymentOverviewScene.jsx # Scene 5  — Three ways to run Elastic
-        ├── SharedResponsibilityScene.jsx # Scene 6  — Who owns what (interactive matrix)
-        ├── FeatureComparisonScene.jsx  # Scene 7  — Feature availability by deployment
-        ├── WhenToChooseScene.jsx       # Scene 8  — Decision guide for each model
-        └── NextStepsScene.jsx          # Scene 9  — Trial, docs, contact
+        ├── HeroScene.jsx              # Scene 1  — Animated search-bar intro (always on)
+        ├── HeroStaticScene.jsx        # Scene 2  — Static logo/title/badges (default hidden)
+        ├── TeamScene.jsx              # Scene 3  — Presenter introductions
+        ├── AgendaScene.jsx            # Scene 4  — Clickable agenda grid
+        ├── ChallengeScene.jsx         # Scene 5  — Infrastructure management pain points
+        ├── WhatIsXScene.jsx           # Scene 6  — Elasticsearch Serverless explained
+        ├── ArchitectureScene.jsx      # Scene 7  — Search AI Lake & separated compute
+        ├── SearchPowerScene.jsx       # Scene 8  — On-demand, Performant, High-throughput
+        ├── CapabilitiesScene.jsx      # Scene 9  — Vector search, ELSER, ES|QL, AI Playground
+        └── NextStepsScene.jsx         # Scene 10 — Free trial, docs, demo link
 ```
 
 ---
@@ -114,6 +128,11 @@ npm run dev
 
 # Elastic Deployment Options Comparison
 cd elastic-deployment-options
+npm install
+npm run dev
+
+# Search AI Serverless
+cd elastic-search-ai-serverless
 npm install
 npm run dev
 ```
@@ -370,6 +389,7 @@ git pull
 - [x] GitHub → Vercel auto-deploy pipeline
 - [x] Settings panel — scene toggle/reorder, team config, demo URL
 - [x] Elastic Deployment Options Comparison showcase
+- [x] Search AI Serverless showcase
 - [ ] Additional showcases: Elastic Security AI Assistant, EIS, Elastic Observability SLOs, …
 
 ---
