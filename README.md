@@ -15,6 +15,7 @@ These showcases are designed to be used in customer conversations, demos, and en
 | **Elastic Deployment Options Comparison** | Self-Managed vs Cloud Hosted vs Serverless — shared responsibility model, feature comparison, and decision guide | `elastic-deployment-options/` | [elastic-stack-deployment-options-showcase.vercel.app](https://elastic-stack-deployment-options-showcase.vercel.app) |
 | **Search AI Serverless** | Elasticsearch Serverless — Search AI Lake architecture, Search Power settings, vector search, and zero-ops deployment | `elastic-search-ai-serverless/` | [elastic-search-ai-serverless.vercel.app](https://elastic-search-ai-serverless.vercel.app) |
 | **Agent Builder Skills** | Reusable instruction sets that give AI agents specialized domain expertise — built-in skills reference, custom skill authoring, and dynamic activation | `elastic-ab-skills/` | [elastic-ab-skills.vercel.app](https://elastic-ab-skills.vercel.app) |
+| **Elastic Security Overview** | Agentic security operations platform — SIEM, XDR, AI-powered detection, automation, and integrations overview | `elastic-security-overview/` | *(deploy Vercel project — root dir: `elastic-security-overview`)* |
 
 ---
 
@@ -109,18 +110,32 @@ elastic-showcases/
 │       ├── CapabilitiesScene.jsx      # Scene 9  — Vector search, ELSER, ES|QL, AI Playground
 │       └── NextStepsScene.jsx         # Scene 10 — Free trial, docs, demo link
 │
-└── elastic-ab-skills/                # Agent Builder Skills showcase
+├── elastic-ab-skills/                # Agent Builder Skills showcase
+│   └── src/scenes/
+│       ├── HeroScene.jsx              # Scene 1  — Animated search-bar intro (always on)
+│       ├── HeroStaticScene.jsx        # Scene 2  — Static logo/title/badges (default hidden)
+│       ├── TeamScene.jsx              # Scene 3  — Presenter introductions
+│       ├── AgendaScene.jsx            # Scene 4  — Clickable agenda grid
+│       ├── ChallengeScene.jsx         # Scene 5  — Copy-paste expertise, bloated prompts pain
+│       ├── WhatIsSkillsScene.jsx      # Scene 6  — Skills explained: knowledge, tools, selective loading
+│       ├── HowSkillsWorkScene.jsx     # Scene 7  — Dynamic skill selection & activation flow
+│       ├── BuiltInSkillsScene.jsx     # Scene 8  — Platform, Observability, Security, Elasticsearch skills
+│       ├── CustomSkillsScene.jsx      # Scene 9  — Fields, workflow, best practices for custom skills
+│       └── NextStepsScene.jsx         # Scene 10 — Trial, docs, custom skills guide, contact
+│
+└── elastic-security-overview/        # Elastic Security Overview showcase
     └── src/scenes/
         ├── HeroScene.jsx              # Scene 1  — Animated search-bar intro (always on)
         ├── HeroStaticScene.jsx        # Scene 2  — Static logo/title/badges (default hidden)
         ├── TeamScene.jsx              # Scene 3  — Presenter introductions
         ├── AgendaScene.jsx            # Scene 4  — Clickable agenda grid
-        ├── ChallengeScene.jsx         # Scene 5  — Copy-paste expertise, bloated prompts pain
-        ├── WhatIsSkillsScene.jsx      # Scene 6  — Skills explained: knowledge, tools, selective loading
-        ├── HowSkillsWorkScene.jsx     # Scene 7  — Dynamic skill selection & activation flow
-        ├── BuiltInSkillsScene.jsx     # Scene 8  — Platform, Observability, Security, Elasticsearch skills
-        ├── CustomSkillsScene.jsx      # Scene 9  — Fields, workflow, best practices for custom skills
-        └── NextStepsScene.jsx         # Scene 10 — Trial, docs, custom skills guide, contact
+        ├── ChallengeScene.jsx         # Scene 5  — Security industry taxes and fragmentation
+        ├── WhatIsElasticSecurityScene.jsx # Scene 6  — Unified SIEM, XDR & agentic AI platform
+        ├── ArchitectureScene.jsx      # Scene 7  — Animated data-to-action flow
+        ├── CapabilitiesScene.jsx      # Scene 8  — Detect, respond, protect (tabbed)
+        ├── IntegrationsScene.jsx      # Scene 9  — Cloud, endpoint, identity, network connectors
+        ├── ProofPointsScene.jsx       # Scene 10 — Customer stats & industry recognition
+        └── NextStepsScene.jsx         # Scene 11 — Free trial, docs, contact, demo link
 ```
 
 ---
@@ -152,6 +167,11 @@ npm run dev
 
 # Agent Builder Skills
 cd elastic-ab-skills
+npm install
+npm run dev
+
+# Elastic Security Overview
+cd elastic-security-overview
 npm install
 npm run dev
 ```
@@ -410,7 +430,8 @@ git pull
 - [x] Elastic Deployment Options Comparison showcase
 - [x] Search AI Serverless showcase
 - [x] Agent Builder Skills showcase
-- [ ] Additional showcases: Elastic Security AI Assistant, EIS, Elastic Observability SLOs, …
+- [x] Elastic Security Overview showcase
+- [ ] Additional showcases: EIS, Elastic Observability SLOs, …
 
 ---
 
