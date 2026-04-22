@@ -14,7 +14,7 @@ These showcases are designed to be used in customer conversations, demos, and en
 | **Elastic Cloud Serverless** | Overview, benefits, project types, and Hosted vs Serverless deployment comparison | `elasticsearch-serverless/` | [elastic-serverless-showcase.vercel.app](https://elastic-serverless-showcase.vercel.app) |
 | **Elastic Deployment Options Comparison** | Self-Managed vs Cloud Hosted vs Serverless — shared responsibility model, feature comparison, and decision guide | `elastic-deployment-options/` | [elastic-stack-deployment-options-showcase.vercel.app](https://elastic-stack-deployment-options-showcase.vercel.app) |
 | **Search AI Serverless** | Elasticsearch Serverless — Search AI Lake architecture, Search Power settings, vector search, and zero-ops deployment | `elastic-search-ai-serverless/` | [elastic-search-ai-serverless.vercel.app](https://elastic-search-ai-serverless.vercel.app) |
-| **Agent Builder Skills** | Reusable instruction sets that give AI agents specialized domain expertise — built-in skills reference, custom skill authoring, and dynamic activation | `elastic-ab-skills/` | *(deploy Vercel project — root dir: `elastic-ab-skills`)* |
+| **Agent Builder Skills** | Reusable instruction sets that give AI agents specialized domain expertise — built-in skills reference, custom skill authoring, and dynamic activation | `elastic-ab-skills/` | [elastic-ab-skills.vercel.app](https://elastic-ab-skills.vercel.app) |
 
 ---
 
