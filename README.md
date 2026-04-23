@@ -16,7 +16,7 @@ These showcases are designed to be used in customer conversations, demos, and en
 | **Search AI Serverless** | Elasticsearch Serverless — Search AI Lake architecture, Search Power settings, vector search, and zero-ops deployment | `elastic-search-ai-serverless/` | [elastic-search-ai-serverless.vercel.app](https://elastic-search-ai-serverless.vercel.app) |
 | **Agent Builder Skills** | Reusable instruction sets that give AI agents specialized domain expertise — built-in skills reference, custom skill authoring, and dynamic activation | `elastic-ab-skills/` | [elastic-ab-skills.vercel.app](https://elastic-ab-skills.vercel.app) |
 | **Elastic Security Overview** | Agentic security operations platform — SIEM, XDR, AI-powered detection, automation, and integrations overview | `elastic-security-overview/` | [elastic-security-overview.vercel.app](https://elastic-security-overview.vercel.app) |
-| **Platform Workflows** | YAML-defined automation in Kibana — turn data insights into automated outcomes without external tools | `elastic-platform-workflow/` | *(deploy Vercel project — root dir: `elastic-platform-workflow`)* |
+| **Platform Workflows** | YAML-defined automation in Kibana — turn data insights into automated outcomes without external tools | `elastic-platform-workflow/` | [elastic-platform-workflow.vercel.app](https://elastic-platform-workflow.vercel.app) |
 
 ---
 
