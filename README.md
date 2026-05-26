@@ -18,7 +18,7 @@ These showcases are designed to be used in customer conversations, demos, and en
 | **Elastic Security Overview** | Agentic security operations platform — SIEM, XDR, AI-powered detection, automation, and integrations overview | `elastic-security-overview/` | [elastic-security-overview.vercel.app](https://elastic-security-overview.vercel.app) |
 | **Platform Workflows** | YAML-defined automation in Kibana — turn data insights into automated outcomes without external tools | `elastic-platform-workflow/` | [elastic-platform-workflow.vercel.app](https://elastic-platform-workflow.vercel.app) |
 | **What is Elastic?** | Intro to the Elastic Search AI Platform — Search, Observability, Security, the Elastic Stack, and deployment options | `what-is-elastic/` | [what-is-elastic.vercel.app](https://what-is-elastic.vercel.app) |
-| **Search Use Cases** | What you can build with Elasticsearch — full-text, vector, semantic, hybrid search, RAG, and 8 use case patterns | `search-use-cases/` | *(deploy Vercel project — root dir: `search-use-cases`)* |
+| **Search Use Cases** | What you can build with Elasticsearch — full-text, vector, semantic, hybrid search, RAG, and 8 use case patterns | `search-use-cases/` | [elastic-search-use-cases-showcase.vercel.app](https://elastic-search-use-cases-showcase.vercel.app) |
 
 ---
 
