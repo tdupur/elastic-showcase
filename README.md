@@ -17,7 +17,7 @@ These showcases are designed to be used in customer conversations, demos, and en
 | **Agent Builder Skills** | Reusable instruction sets that give AI agents specialized domain expertise — built-in skills reference, custom skill authoring, and dynamic activation | `elastic-ab-skills/` | [elastic-ab-skills.vercel.app](https://elastic-ab-skills.vercel.app) |
 | **Elastic Security Overview** | Agentic security operations platform — SIEM, XDR, AI-powered detection, automation, and integrations overview | `elastic-security-overview/` | [elastic-security-overview.vercel.app](https://elastic-security-overview.vercel.app) |
 | **Platform Workflows** | YAML-defined automation in Kibana — turn data insights into automated outcomes without external tools | `elastic-platform-workflow/` | [elastic-platform-workflow.vercel.app](https://elastic-platform-workflow.vercel.app) |
-| **What is Elastic?** | Intro to the Elastic Search AI Platform — Search, Observability, Security, the Elastic Stack, and deployment options | `what-is-elastic/` | *(deploy Vercel project — root dir: `what-is-elastic`)* |
+| **What is Elastic?** | Intro to the Elastic Search AI Platform — Search, Observability, Security, the Elastic Stack, and deployment options | `what-is-elastic/` | [what-is-elastic.vercel.app](https://what-is-elastic.vercel.app) |
 
 ---
 
