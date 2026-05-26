@@ -18,6 +18,7 @@ These showcases are designed to be used in customer conversations, demos, and en
 | **Elastic Security Overview** | Agentic security operations platform — SIEM, XDR, AI-powered detection, automation, and integrations overview | `elastic-security-overview/` | [elastic-security-overview.vercel.app](https://elastic-security-overview.vercel.app) |
 | **Platform Workflows** | YAML-defined automation in Kibana — turn data insights into automated outcomes without external tools | `elastic-platform-workflow/` | [elastic-platform-workflow.vercel.app](https://elastic-platform-workflow.vercel.app) |
 | **What is Elastic?** | Intro to the Elastic Search AI Platform — Search, Observability, Security, the Elastic Stack, and deployment options | `what-is-elastic/` | [what-is-elastic.vercel.app](https://what-is-elastic.vercel.app) |
+| **Search Use Cases** | What you can build with Elasticsearch — full-text, vector, semantic, hybrid search, RAG, and 8 use case patterns | `search-use-cases/` | *(deploy Vercel project — root dir: `search-use-cases`)* |
 
 ---
 
@@ -153,18 +154,32 @@ elastic-showcases/
 │       ├── InstallationScene.jsx      # Scene 10 — Enable in Kibana + configure privileges
 │       └── NextStepsScene.jsx         # Scene 11 — Docs, first workflow, contact, demo link
 │
-└── what-is-elastic/                  # What is Elastic? showcase
+├── what-is-elastic/                  # What is Elastic? showcase
+│   └── src/scenes/
+│       ├── HeroScene.jsx              # Scene 1  — Animated search-bar intro (always on)
+│       ├── HeroStaticScene.jsx        # Scene 2  — Static logo/title/badges (default hidden)
+│       ├── TeamScene.jsx              # Scene 3  — Presenter introductions
+│       ├── AgendaScene.jsx            # Scene 4  — Clickable agenda grid
+│       ├── ChallengeScene.jsx         # Scene 5  — Data silos and fragmented tooling pain
+│       ├── WhatIsElasticScene.jsx     # Scene 6  — The Search AI Platform explained
+│       ├── ArchitectureScene.jsx      # Scene 7  — The Elastic Stack: Ingest, Store, Explore
+│       ├── SolutionsScene.jsx         # Scene 8  — Elasticsearch, Observability, Security
+│       ├── DeploymentScene.jsx        # Scene 9  — Serverless, Cloud Hosted, Self-Managed
+│       └── NextStepsScene.jsx         # Scene 10 — Free trial, docs, contact, demo link
+│
+└── search-use-cases/                 # Search Use Cases showcase
     └── src/scenes/
         ├── HeroScene.jsx              # Scene 1  — Animated search-bar intro (always on)
         ├── HeroStaticScene.jsx        # Scene 2  — Static logo/title/badges (default hidden)
         ├── TeamScene.jsx              # Scene 3  — Presenter introductions
         ├── AgendaScene.jsx            # Scene 4  — Clickable agenda grid
-        ├── ChallengeScene.jsx         # Scene 5  — Data silos and fragmented tooling pain
-        ├── WhatIsElasticScene.jsx     # Scene 6  — The Search AI Platform explained
-        ├── ArchitectureScene.jsx      # Scene 7  — The Elastic Stack: Ingest, Store, Explore
-        ├── SolutionsScene.jsx         # Scene 8  — Elasticsearch, Observability, Security
-        ├── DeploymentScene.jsx        # Scene 9  — Serverless, Cloud Hosted, Self-Managed
-        └── NextStepsScene.jsx         # Scene 10 — Free trial, docs, contact, demo link
+        ├── ChallengeScene.jsx         # Scene 5  — Why search is harder than it looks
+        ├── WhatIsSearchScene.jsx      # Scene 6  — The unified Elasticsearch search platform
+        ├── UseCasesScene.jsx          # Scene 7  — 8 use cases across industries
+        ├── SearchApproachesScene.jsx  # Scene 8  — Full-text, vector, semantic, hybrid, geo
+        ├── RAGScene.jsx               # Scene 9  — RAG workflow, advantages, and build options
+        ├── GettingStartedScene.jsx    # Scene 10 — Zero to search in 4 steps
+        └── NextStepsScene.jsx         # Scene 11 — Free trial, docs, contact, demo link
 ```
 
 ---
@@ -211,6 +226,11 @@ npm run dev
 
 # What is Elastic?
 cd what-is-elastic
+npm install
+npm run dev
+
+# Search Use Cases
+cd search-use-cases
 npm install
 npm run dev
 ```
@@ -472,6 +492,7 @@ git pull
 - [x] Elastic Security Overview showcase
 - [x] Platform Workflows showcase
 - [x] What is Elastic? showcase
+- [x] Search Use Cases — What You Can Build showcase
 - [ ] Additional showcases: EIS, Elastic Observability SLOs, …
 
 ---
