@@ -24,8 +24,8 @@ import SceneSettings, { useEnabledScenes, useDemoUrl } from './components/SceneS
 // - duration: shown in agenda (optional)
 // - hideFromAgenda: true to hide from the agenda slide
 const scenes = [
-  { id: 'hero', component: HeroScene, title: 'Introduction', hideFromAgenda: true },
-  { id: 'hero-static', component: HeroStaticScene, title: 'Introduction (Static)', hideFromAgenda: true, defaultHidden: true },
+  { id: 'hero-static', component: HeroStaticScene, title: 'Introduction', hideFromAgenda: true },
+  { id: 'hero', component: HeroScene, title: 'Introduction (Animated)', hideFromAgenda: true, defaultHidden: true },
   { id: 'team', component: TeamScene, title: 'Team Introductions', hideFromAgenda: true },
   { id: 'agenda', component: AgendaScene, title: 'Agenda', hideFromAgenda: true },
   // TODO: Add your feature scenes here

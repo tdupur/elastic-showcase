@@ -19,6 +19,7 @@ These showcases are designed to be used in customer conversations, demos, and en
 | **Platform Workflows** | YAML-defined automation in Kibana — turn data insights into automated outcomes without external tools | `elastic-platform-workflow/` | [elastic-platform-workflow.vercel.app](https://elastic-platform-workflow.vercel.app) |
 | **What is Elastic?** | Intro to the Elastic Search AI Platform — Search, Observability, Security, the Elastic Stack, and deployment options | `what-is-elastic/` | [what-is-elastic.vercel.app](https://what-is-elastic.vercel.app) |
 | **Search Use Cases** | What you can build with Elasticsearch — full-text, vector, semantic, hybrid search, RAG, and 8 use case patterns | `search-use-cases/` | [elastic-search-use-cases-showcase.vercel.app](https://elastic-search-use-cases-showcase.vercel.app) |
+| **Elastic Agent Builder** | Build custom AI agents grounded in enterprise data — tools, skills, architecture, and built-in capabilities | `elastic-agent-builder/` | *(deploy Vercel project — root dir: `elastic-agent-builder`)* |
 
 ---
 
@@ -167,19 +168,32 @@ elastic-showcases/
 │       ├── DeploymentScene.jsx        # Scene 9  — Serverless, Cloud Hosted, Self-Managed
 │       └── NextStepsScene.jsx         # Scene 10 — Free trial, docs, contact, demo link
 │
-└── search-use-cases/                 # Search Use Cases showcase
+├── search-use-cases/                 # Search Use Cases showcase
+│   └── src/scenes/
+│       ├── HeroScene.jsx              # Scene 1  — Animated search-bar intro (always on)
+│       ├── HeroStaticScene.jsx        # Scene 2  — Static logo/title/badges (default hidden)
+│       ├── TeamScene.jsx              # Scene 3  — Presenter introductions
+│       ├── AgendaScene.jsx            # Scene 4  — Clickable agenda grid
+│       ├── ChallengeScene.jsx         # Scene 5  — Why search is harder than it looks
+│       ├── WhatIsSearchScene.jsx      # Scene 6  — The unified Elasticsearch search platform
+│       ├── UseCasesScene.jsx          # Scene 7  — 8 use cases across industries
+│       ├── SearchApproachesScene.jsx  # Scene 8  — Full-text, vector, semantic, hybrid, geo
+│       ├── RAGScene.jsx               # Scene 9  — RAG workflow, advantages, and build options
+│       ├── GettingStartedScene.jsx    # Scene 10 — Zero to search in 4 steps
+│       └── NextStepsScene.jsx         # Scene 11 — Free trial, docs, contact, demo link
+│
+└── elastic-agent-builder/            # Elastic Agent Builder showcase
     └── src/scenes/
-        ├── HeroScene.jsx              # Scene 1  — Animated search-bar intro (always on)
-        ├── HeroStaticScene.jsx        # Scene 2  — Static logo/title/badges (default hidden)
+        ├── HeroStaticScene.jsx        # Scene 1  — Default title slide (Elastic Agent Builder)
+        ├── HeroScene.jsx              # Scene 2  — Animated search-bar intro (default hidden)
         ├── TeamScene.jsx              # Scene 3  — Presenter introductions
         ├── AgendaScene.jsx            # Scene 4  — Clickable agenda grid
-        ├── ChallengeScene.jsx         # Scene 5  — Why search is harder than it looks
-        ├── WhatIsSearchScene.jsx      # Scene 6  — The unified Elasticsearch search platform
-        ├── UseCasesScene.jsx          # Scene 7  — 8 use cases across industries
-        ├── SearchApproachesScene.jsx  # Scene 8  — Full-text, vector, semantic, hybrid, geo
-        ├── RAGScene.jsx               # Scene 9  — RAG workflow, advantages, and build options
-        ├── GettingStartedScene.jsx    # Scene 10 — Zero to search in 4 steps
-        └── NextStepsScene.jsx         # Scene 11 — Free trial, docs, contact, demo link
+        ├── ChallengeScene.jsx         # Scene 5  — Why building AI agents is hard
+        ├── WhatIsAgentBuilderScene.jsx # Scene 6  — Platform overview: Chat, Tools, Skills, Workflows
+        ├── ArchitectureScene.jsx      # Scene 7  — Animated flow: Data → Tools → Skills → Agent → Chat
+        ├── CapabilitiesScene.jsx      # Scene 8  — Tabbed capabilities: Chat, Tools, Skills, Workflows
+        ├── BuiltInSkillsScene.jsx     # Scene 9  — Domain skills: Platform, Observability, Security, Search
+        └── NextStepsScene.jsx         # Scene 10 — Free trial, docs, contact, demo link
 ```
 
 ---
@@ -231,6 +245,11 @@ npm run dev
 
 # Search Use Cases
 cd search-use-cases
+npm install
+npm run dev
+
+# Elastic Agent Builder
+cd elastic-agent-builder
 npm install
 npm run dev
 ```
@@ -493,6 +512,7 @@ git pull
 - [x] Platform Workflows showcase
 - [x] What is Elastic? showcase
 - [x] Search Use Cases — What You Can Build showcase
+- [x] Elastic Agent Builder showcase
 - [ ] Additional showcases: EIS, Elastic Observability SLOs, …
 
 ---

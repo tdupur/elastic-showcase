@@ -1,0 +1,297 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Elastic Brand Colors - Core */
+  --elastic-blue: #0B64DD;
+  --elastic-teal: #48EFCF;
+  --elastic-poppy: #FF957D;
+  --elastic-pink: #F04E98;
+  --elastic-yellow: #FEC514;
+  --elastic-midnight: #153385;
+  --elastic-dev-blue: #101C3F;
+  
+  /* Elastic Brand Colors - Text */
+  --elastic-dark-ink: #1C1E23;
+  --elastic-ink: #343741;
+  --elastic-white: #FFFFFF;
+  
+  /* Elastic Brand Colors - Backgrounds */
+  --elastic-light-grey: #F5F7FA;
+  
+  /* Typography specs */
+  --line-height-headline: 1.14;
+  --line-height-paragraph: 1.55;
+  --letter-spacing-eyebrow: 0.08em;
+}
+
+/* Dark theme (default) - Brand aligned:
+   Background: Developer Blue (#101C3F)
+   Headlines: White (#FFFFFF)
+   Paragraphs: Light Gray (#F5F7FA)
+   Eyebrows/Accents: Light Teal (#48EFCF) */
+:root.dark {
+  --bg-primary: #101C3F;
+  --bg-secondary: #1C1E23;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --bg-card-hover: rgba(255, 255, 255, 0.05);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(255, 255, 255, 0.2);
+  --text-primary: #FFFFFF;         /* White for headlines */
+  --text-secondary: #F5F7FA;       /* Light Gray for paragraphs */
+  --text-muted: rgba(245, 247, 250, 0.6);
+  --text-eyebrow: #48EFCF;         /* Light Teal for eyebrows */
+  --orb-opacity: 0.08;
+  --grid-opacity: 0.02;
+}
+
+/* Light theme - Brand aligned:
+   Background: Light Gray (#F5F7FA) or White (#FFFFFF)
+   Headlines: Dark Ink (#1C1E23)
+   Paragraphs: Ink (#343741)
+   Eyebrows/Accents: Elastic Blue (#0B64DD) */
+:root.light {
+  --bg-primary: #F5F7FA;
+  --bg-secondary: #FFFFFF;
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --bg-card-hover: rgba(255, 255, 255, 0.95);
+  --border-color: rgba(16, 28, 63, 0.1);
+  --border-hover: rgba(16, 28, 63, 0.2);
+  --text-primary: #1C1E23;   /* Dark Ink for headlines */
+  --text-secondary: #343741; /* Ink for paragraphs */
+  --text-muted: rgba(52, 55, 65, 0.6);
+  --text-eyebrow: #0B64DD;   /* Elastic Blue for eyebrows */
+  --orb-opacity: 0.15;
+  --grid-opacity: 0.03;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: var(--line-height-paragraph);
+}
+
+/* ===========================
+   Elastic Brand Typography
+   =========================== */
+
+/* Eyebrow text - Inter Bold, 8% tracking, uppercase */
+.text-eyebrow {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: var(--letter-spacing-eyebrow);
+  text-transform: uppercase;
+  font-size: 0.875rem; /* 14px base */
+}
+
+/* Headline text - Mier B Extrabold (with Inter fallback), 114% line-height */
+.text-headline {
+  font-family: 'Mier B', 'Inter', system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: var(--line-height-headline);
+}
+
+/* Paragraph text - Inter Regular, 155% line-height */
+.text-paragraph {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: var(--line-height-paragraph);
+}
+
+/* Caption text - Inter Regular, 155% line-height */
+.text-caption {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: var(--line-height-paragraph);
+}
+
+/* Code/numerals - Space Mono */
+.text-code {
+  font-family: 'Space Mono', monospace;
+}
+
+/* Custom scrollbar - Dark */
+.dark ::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: var(--elastic-dark-ink);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--elastic-blue);
+  border-radius: 3px;
+}
+
+/* Custom scrollbar - Light */
+.light ::-webkit-scrollbar {
+  width: 6px;
+}
+
+.light ::-webkit-scrollbar-track {
+  background: #E5E7EB;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: var(--elastic-blue);
+  border-radius: 3px;
+}
+
+/* Gradient text utility - Bold Minimalism style */
+.gradient-text {
+  background: linear-gradient(135deg, var(--elastic-blue) 0%, var(--elastic-dev-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .gradient-text {
+  background: linear-gradient(135deg, var(--elastic-blue) 0%, var(--elastic-teal) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow effects */
+.glow-teal {
+  box-shadow: 0 0 30px rgba(72, 239, 207, 0.4);
+}
+
+.glow-pink {
+  box-shadow: 0 0 30px rgba(240, 78, 152, 0.4);
+}
+
+.glow-blue {
+  box-shadow: 0 0 30px rgba(11, 100, 221, 0.4);
+}
+
+/* Scene container */
+.scene {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 2rem 4rem;
+}
+
+/* Allow scene content to grow beyond viewport if needed */
+.scene > * {
+  flex-shrink: 0;
+}
+
+/* Subtle grid background pattern */
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(11, 100, 221, var(--grid-opacity)) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 100, 221, var(--grid-opacity)) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Noise texture overlay */
+.noise-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Theme-aware utility classes */
+.theme-bg {
+  background-color: var(--bg-primary);
+}
+
+.theme-bg-card {
+  background-color: var(--bg-card);
+}
+
+.theme-text {
+  color: var(--text-primary);
+}
+
+.theme-text-secondary {
+  color: var(--text-secondary);
+}
+
+.theme-text-muted {
+  color: var(--text-muted);
+}
+
+.theme-border {
+  border-color: var(--border-color);
+}
+
+/* Custom range slider styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--elastic-teal);
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 0 10px rgba(72, 239, 207, 0.5);
+  margin-top: -7px;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--elastic-teal);
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 0 10px rgba(72, 239, 207, 0.5);
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 4px;
+}
+
+input[type="range"]::-moz-range-track {
+  height: 8px;
+  border-radius: 4px;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 15px rgba(72, 239, 207, 0.8);
+}
+

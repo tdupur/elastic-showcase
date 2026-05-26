@@ -2,8 +2,8 @@ import { motion } from 'framer-motion'
 import { useTheme } from '../context/ThemeContext'
 
 // TODO: Replace title, subtitle, and badge text with your feature content
-// This scene is an alternative static hero — disabled by default in the Configurator.
-// Enable it via Settings → Scenes if you prefer this simpler opening over HeroScene.
+// This is the default opening scene — clean logo + title + badges, no animation required.
+// The animated search-bar hero (HeroScene) is available but disabled by default in the Configurator.
 const SHOWCASE_TITLE_LINE1 = 'Your Feature'
 const SHOWCASE_TITLE_LINE2 = 'Showcase Title'
 const SHOWCASE_SUBTITLE = 'Replace this with a one-line description of what this showcase demonstrates.'
