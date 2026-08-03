@@ -20,6 +20,7 @@ These showcases are designed to be used in customer conversations, demos, and en
 | **What is Elastic?** | Intro to the Elastic Search AI Platform — Search, Observability, Security, the Elastic Stack, and deployment options | `what-is-elastic/` | [what-is-elastic.vercel.app](https://what-is-elastic.vercel.app) |
 | **Search Use Cases** | What you can build with Elasticsearch — full-text, vector, semantic, hybrid search, RAG, and 8 use case patterns | `search-use-cases/` | [elastic-search-use-cases-showcase.vercel.app](https://elastic-search-use-cases-showcase.vercel.app) |
 | **Elastic Agent Builder** | Build custom AI agents grounded in enterprise data — tools, skills, architecture, and built-in capabilities | `elastic-agent-builder/` | [elastic-agent-builder-showcase.vercel.app](https://elastic-agent-builder-showcase.vercel.app) |
+| **Elastic Observability** | Unified logs, metrics, traces, and AIOps — from any source, at any scale | `elastic-observability/` | *(deploy Vercel project — root dir: `elastic-observability`)* |
 
 ---
 
@@ -182,17 +183,30 @@ elastic-showcases/
 │       ├── GettingStartedScene.jsx    # Scene 10 — Zero to search in 4 steps
 │       └── NextStepsScene.jsx         # Scene 11 — Free trial, docs, contact, demo link
 │
-└── elastic-agent-builder/            # Elastic Agent Builder showcase
+├── elastic-agent-builder/            # Elastic Agent Builder showcase
+│   └── src/scenes/
+│       ├── HeroStaticScene.jsx        # Scene 1  — Default title slide (Elastic Agent Builder)
+│       ├── HeroScene.jsx              # Scene 2  — Animated search-bar intro (default hidden)
+│       ├── TeamScene.jsx              # Scene 3  — Presenter introductions
+│       ├── AgendaScene.jsx            # Scene 4  — Clickable agenda grid
+│       ├── ChallengeScene.jsx         # Scene 5  — Why building AI agents is hard
+│       ├── WhatIsAgentBuilderScene.jsx # Scene 6  — Platform overview: Chat, Tools, Skills, Workflows
+│       ├── ArchitectureScene.jsx      # Scene 7  — Animated flow: Data → Tools → Skills → Agent → Chat
+│       ├── CapabilitiesScene.jsx      # Scene 8  — Tabbed capabilities: Chat, Tools, Skills, Workflows
+│       ├── BuiltInSkillsScene.jsx     # Scene 9  — Domain skills: Platform, Observability, Security, Search
+│       └── NextStepsScene.jsx         # Scene 10 — Free trial, docs, contact, demo link
+│
+└── elastic-observability/            # Elastic Observability showcase
     └── src/scenes/
-        ├── HeroStaticScene.jsx        # Scene 1  — Default title slide (Elastic Agent Builder)
+        ├── HeroStaticScene.jsx        # Scene 1  — Default title slide (Elastic Observability)
         ├── HeroScene.jsx              # Scene 2  — Animated search-bar intro (default hidden)
         ├── TeamScene.jsx              # Scene 3  — Presenter introductions
         ├── AgendaScene.jsx            # Scene 4  — Clickable agenda grid
-        ├── ChallengeScene.jsx         # Scene 5  — Why building AI agents is hard
-        ├── WhatIsAgentBuilderScene.jsx # Scene 6  — Platform overview: Chat, Tools, Skills, Workflows
-        ├── ArchitectureScene.jsx      # Scene 7  — Animated flow: Data → Tools → Skills → Agent → Chat
-        ├── CapabilitiesScene.jsx      # Scene 8  — Tabbed capabilities: Chat, Tools, Skills, Workflows
-        ├── BuiltInSkillsScene.jsx     # Scene 9  — Domain skills: Platform, Observability, Security, Search
+        ├── ChallengeScene.jsx         # Scene 5  — Why modern observability is broken
+        ├── WhatIsObservabilityScene.jsx # Scene 6  — Three pillars, OpenTelemetry, and AIOps
+        ├── ArchitectureScene.jsx      # Scene 7  — Animated data flow: sources → EDOT → ES → Kibana
+        ├── CapabilitiesScene.jsx      # Scene 8  — APM, logs, infra, digital experience, LLM obs, profiling
+        ├── AIOpsScene.jsx             # Scene 9  — AI Assistant, anomaly detection, SLOs, alerting
         └── NextStepsScene.jsx         # Scene 10 — Free trial, docs, contact, demo link
 ```
 
@@ -250,6 +264,11 @@ npm run dev
 
 # Elastic Agent Builder
 cd elastic-agent-builder
+npm install
+npm run dev
+
+# Elastic Observability
+cd elastic-observability
 npm install
 npm run dev
 ```
@@ -513,7 +532,8 @@ git pull
 - [x] What is Elastic? showcase
 - [x] Search Use Cases — What You Can Build showcase
 - [x] Elastic Agent Builder showcase
-- [ ] Additional showcases: EIS, Elastic Observability SLOs, …
+- [x] Elastic Observability showcase
+- [ ] Additional showcases: EIS, …
 
 ---
 
