@@ -20,7 +20,7 @@ These showcases are designed to be used in customer conversations, demos, and en
 | **What is Elastic?** | Intro to the Elastic Search AI Platform — Search, Observability, Security, the Elastic Stack, and deployment options | `what-is-elastic/` | [what-is-elastic.vercel.app](https://what-is-elastic.vercel.app) |
 | **Search Use Cases** | What you can build with Elasticsearch — full-text, vector, semantic, hybrid search, RAG, and 8 use case patterns | `search-use-cases/` | [elastic-search-use-cases-showcase.vercel.app](https://elastic-search-use-cases-showcase.vercel.app) |
 | **Elastic Agent Builder** | Build custom AI agents grounded in enterprise data — tools, skills, architecture, and built-in capabilities | `elastic-agent-builder/` | [elastic-agent-builder-showcase.vercel.app](https://elastic-agent-builder-showcase.vercel.app) |
-| **Elastic Observability** | Unified logs, metrics, traces, and AIOps — from any source, at any scale | `what-is-observability/` | *(deploy Vercel project — root dir: `what-is-observability`)* |
+| **Elastic Observability** | Unified logs, metrics, traces, and AIOps — from any source, at any scale | `what-is-observability/` | [what-is-observability.vercel.app](https://what-is-observability.vercel.app) |
 
 ---
 
