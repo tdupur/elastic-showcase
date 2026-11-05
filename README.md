@@ -1,4 +1,4 @@
-# Elastic Showcases
+# Elastic Showcase
 
 A collection of interactive, browser-based presentation apps that demonstrate Elastic features and capabilities. Each showcase is a standalone React + Vite single-page application built on a shared design system using Elastic's official brand language.
 
