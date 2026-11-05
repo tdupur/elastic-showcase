@@ -4,7 +4,7 @@ import { useTheme } from '../context/ThemeContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight, faArrowLeft, faBook, faFlask, faComments, faCirclePlay } from '@fortawesome/free-solid-svg-icons'
 
-const FALLBACK_DEMO_URL = null // set a Navattic link here when one exists
+const FALLBACK_DEMO_URL = 'https://elastic.navattic.com/AlertZero'
 
 const actions = [
   {
