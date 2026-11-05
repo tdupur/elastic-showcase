@@ -442,7 +442,7 @@ Each showcase deploys as its own Vercel project pointing to its subfolder.
 
 1. Push to GitHub (auto-deploy triggers on `git push main`)
 2. Go to [vercel.com/dashboard](https://vercel.com/dashboard) → **Add New Project**
-3. Import the `elastic-showcases` GitHub repo
+3. Import the `elastic-showcase` GitHub repo
 4. Set **Root Directory** to the showcase subfolder (e.g. `elasticsearch-serverless`)
 5. Set project name to `elastic-{name}-showcase`
 6. Deploy — live within ~60 seconds
@@ -473,8 +473,8 @@ The `/showcase` Claude Code skill generates a complete, deployed interactive sho
 
 **1. Clone this repo**
 ```bash
-git clone https://github.com/tdupur/elastic-showcases.git
-cd elastic-showcases
+git clone https://github.com/tdupur/elastic-showcase.git
+cd elastic-showcase
 ```
 
 **2. Run the setup script**

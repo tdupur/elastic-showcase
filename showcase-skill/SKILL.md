@@ -61,10 +61,10 @@ If related documentation pages are referenced, use `mcp__elastic-docs__find_rela
 
 ```bash
 # Copy the template to the new project folder
-cp -r /Users/terrydupureur/Demos/elastic-showcases/_template \
-      /Users/terrydupureur/Demos/elastic-showcases/{name}
+cp -r ~/Demos/elastic-showcases/_template \
+      ~/Demos/elastic-showcases/{name}
 
-cd /Users/terrydupureur/Demos/elastic-showcases/{name}
+cd ~/Demos/elastic-showcases/{name}
 ```
 
 Then update identity in three files:
@@ -86,7 +86,7 @@ Then update identity in three files:
 ### STEP 3 — Install Dependencies
 
 ```bash
-cd /Users/terrydupureur/Demos/elastic-showcases/{name}
+cd ~/Demos/elastic-showcases/{name}
 npm install
 ```
 
@@ -211,7 +211,7 @@ faUsers, faCube, faTerminal, faKey, faPlug, faMagnifyingGlassChart, faSlidersH`
 ```
 
 #### Reference Implementation
-Study `/Users/terrydupureur/Demos/elastic-showcases/autoops-cloud-connect/src/scenes/` for production examples of every scene type.
+Study `~/Demos/elastic-showcases/autoops-cloud-connect/src/scenes/` for production examples of every scene type.
 
 ---
 
@@ -255,7 +255,7 @@ The template's `App.jsx` already has `useDemoUrl` imported and wired — do not 
 ### STEP 7 — Build and Verify
 
 ```bash
-cd /Users/terrydupureur/Demos/elastic-showcases/{name}
+cd ~/Demos/elastic-showcases/{name}
 npm run build
 ```
 
@@ -271,7 +271,7 @@ npm run build
 
 ### STEP 8 — Update README.md
 
-Open `/Users/terrydupureur/Demos/elastic-showcases/README.md` and make the following updates:
+Open `~/Demos/elastic-showcases/README.md` and make the following updates:
 
 **1. Add a row to the Live Showcases table:**
 ```markdown
@@ -309,7 +309,7 @@ Save the file before proceeding to Step 9.
 ### STEP 9 — Deploy via GitHub
 
 ```bash
-cd /Users/terrydupureur/Demos/elastic-showcases
+cd ~/Demos/elastic-showcases
 git add .
 git commit -m "Add {name} showcase: {Feature Name}"
 git push origin main
@@ -333,7 +333,7 @@ Return a summary to the user:
 ```
 ✅ Showcase built and pushed to GitHub.
 
-📁 Project:     /Users/terrydupureur/Demos/elastic-showcases/{name}/
+📁 Project:     ~/Demos/elastic-showcases/{name}/
 🎬 Scenes:      [list the scene titles]
 🔨 Build:       Passed
 📝 README:      Updated — Live Showcases table + Project Structure + Roadmap
@@ -371,7 +371,7 @@ Before pushing, verify:
 
 | Path | Purpose |
 |---|---|
-| `/Users/terrydupureur/Demos/elastic-showcases/_template/` | Source template to copy from |
-| `/Users/terrydupureur/Demos/elastic-showcases/{name}/` | New showcase output |
-| `/Users/terrydupureur/Demos/elastic-showcases/autoops-cloud-connect/` | Reference implementation |
+| `~/Demos/elastic-showcases/_template/` | Source template to copy from |
+| `~/Demos/elastic-showcases/{name}/` | New showcase output |
+| `~/Demos/elastic-showcases/autoops-cloud-connect/` | Reference implementation |
 | `~/.claude/CLAUDE.md` | Global project context |

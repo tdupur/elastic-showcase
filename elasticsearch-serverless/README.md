@@ -10,9 +10,9 @@ Same design system, navigation, and animation patterns as the original presentat
 ### Step 1 — Copy this template
 
 ```bash
-cp -r /Users/terrydupureur/Demos/elastic-showcases/_template \
-       /Users/terrydupureur/Demos/elastic-showcases/my-new-showcase
-cd /Users/terrydupureur/Demos/elastic-showcases/my-new-showcase
+cp -r ~/Demos/elastic-showcases/_template \
+       ~/Demos/elastic-showcases/my-new-showcase
+cd ~/Demos/elastic-showcases/my-new-showcase
 ```
 
 ### Step 2 — Update the title
