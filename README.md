@@ -21,6 +21,7 @@ These showcases are designed to be used in customer conversations, demos, and en
 | **Search Use Cases** | What you can build with Elasticsearch — full-text, vector, semantic, hybrid search, RAG, and 8 use case patterns | `search-use-cases/` | [elastic-search-use-cases-showcase.vercel.app](https://elastic-search-use-cases-showcase.vercel.app) |
 | **Elastic Agent Builder** | Build custom AI agents grounded in enterprise data — tools, skills, architecture, and built-in capabilities | `elastic-agent-builder/` | [elastic-agent-builder-showcase.vercel.app](https://elastic-agent-builder-showcase.vercel.app) |
 | **Elastic Observability** | Unified logs, metrics, traces, and AIOps — from any source, at any scale | `what-is-observability/` | [what-is-observability.vercel.app](https://what-is-observability.vercel.app) |
+| **AlertZero** | Agentic AI SOC automation in Elastic Security — Watches, Proposed Actions, and per-Worker autonomy (upcoming technical preview) | `alertzero/` | *(deploy Vercel project — root dir: `alertzero`)* |
 
 ---
 
@@ -196,18 +197,33 @@ elastic-showcases/
 │       ├── BuiltInSkillsScene.jsx     # Scene 9  — Domain skills: Platform, Observability, Security, Search
 │       └── NextStepsScene.jsx         # Scene 10 — Free trial, docs, contact, demo link
 │
-└── what-is-observability/            # Elastic Observability showcase
+├── what-is-observability/            # Elastic Observability showcase
+│   └── src/scenes/
+│       ├── HeroStaticScene.jsx        # Scene 1  — Default title slide (Elastic Observability)
+│       ├── HeroScene.jsx              # Scene 2  — Animated search-bar intro (default hidden)
+│       ├── TeamScene.jsx              # Scene 3  — Presenter introductions
+│       ├── AgendaScene.jsx            # Scene 4  — Clickable agenda grid
+│       ├── ChallengeScene.jsx         # Scene 5  — Why modern observability is broken
+│       ├── WhatIsObservabilityScene.jsx # Scene 6  — Three pillars, OpenTelemetry, and AIOps
+│       ├── ArchitectureScene.jsx      # Scene 7  — Animated data flow: sources → EDOT → ES → Kibana
+│       ├── CapabilitiesScene.jsx      # Scene 8  — APM, logs, infra, digital experience, LLM obs, profiling
+│       ├── AIOpsScene.jsx             # Scene 9  — AI Assistant, anomaly detection, SLOs, alerting
+│       └── NextStepsScene.jsx         # Scene 10 — Free trial, docs, contact, demo link
+│
+└── alertzero/                        # AlertZero showcase
     └── src/scenes/
-        ├── HeroStaticScene.jsx        # Scene 1  — Default title slide (Elastic Observability)
+        ├── HeroStaticScene.jsx        # Scene 1  — Default title slide (AlertZero)
         ├── HeroScene.jsx              # Scene 2  — Animated search-bar intro (default hidden)
         ├── TeamScene.jsx              # Scene 3  — Presenter introductions
         ├── AgendaScene.jsx            # Scene 4  — Clickable agenda grid
-        ├── ChallengeScene.jsx         # Scene 5  — Why modern observability is broken
-        ├── WhatIsObservabilityScene.jsx # Scene 6  — Three pillars, OpenTelemetry, and AIOps
-        ├── ArchitectureScene.jsx      # Scene 7  — Animated data flow: sources → EDOT → ES → Kibana
-        ├── CapabilitiesScene.jsx      # Scene 8  — APM, logs, infra, digital experience, LLM obs, profiling
-        ├── AIOpsScene.jsx             # Scene 9  — AI Assistant, anomaly detection, SLOs, alerting
-        └── NextStepsScene.jsx         # Scene 10 — Free trial, docs, contact, demo link
+        ├── ChallengeScene.jsx         # Scene 5  — The alert queue sets the agenda
+        ├── WhatIsAlertZeroScene.jsx   # Scene 6  — Watches, Workers, Proposed Actions, and lineage
+        ├── WatchesScene.jsx           # Scene 7  — Triage, Hunt, Detection, and Forensics Watches
+        ├── WalkthroughScene.jsx       # Scene 8  — Suspicious login session, step by step
+        ├── BeyondTriageScene.jsx      # Scene 9  — Threat hunting and rule tuning
+        ├── AutonomyScene.jsx          # Scene 10 — Manual, assisted, and supervised per Worker
+        ├── OpenByDesignScene.jsx      # Scene 11 — Any model, any environment, built-on components
+        └── NextStepsScene.jsx         # Scene 12 — Tech preview sign-up, blog, docs, demo link
 ```
 
 ---
@@ -269,6 +285,11 @@ npm run dev
 
 # Elastic Observability
 cd what-is-observability
+npm install
+npm run dev
+
+# AlertZero
+cd alertzero
 npm install
 npm run dev
 ```
@@ -533,6 +554,7 @@ git pull
 - [x] Search Use Cases — What You Can Build showcase
 - [x] Elastic Agent Builder showcase
 - [x] Elastic Observability showcase
+- [x] AlertZero showcase
 - [ ] Additional showcases: EIS, …
 
 ---
