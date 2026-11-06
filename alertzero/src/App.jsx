@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { Analytics } from "@vercel/analytics/react"
 import { AnimatePresence, motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -17,6 +17,7 @@ import WalkthroughScene from './scenes/WalkthroughScene'
 import BeyondTriageScene from './scenes/BeyondTriageScene'
 import AutonomyScene from './scenes/AutonomyScene'
 import OpenByDesignScene from './scenes/OpenByDesignScene'
+import { createSync, openPresenter } from './presenter/sync'
 import Navigation from './components/Navigation'
 import ProgressBar from './components/ProgressBar'
 import SceneSettings, { useEnabledScenes, useDemoUrl } from './components/SceneSettings'
@@ -59,6 +60,30 @@ function App() {
 
   useEffect(() => { setIsReady(true) }, [])
 
+  // --- Presenter sync (speaker notes in a second window, opened with the P key) ---
+  const syncRef = useRef(null)
+  const syncState = useRef({ index: 0, scenes: [] })
+  useEffect(() => {
+    const sync = createSync()
+    syncRef.current = sync
+    sync.onMessage((m) => {
+      if (m?.type === 'hello') sync.send({ type: 'state', ...syncState.current })
+      else if (m?.type === 'goto') setCurrentScene(Math.max(0, Math.min(m.index, syncState.current.scenes.length - 1)))
+      else if (m?.type === 'next') setCurrentScene(i => Math.min(i + 1, syncState.current.scenes.length - 1))
+      else if (m?.type === 'prev') setCurrentScene(i => Math.max(i - 1, 0))
+    })
+    return () => sync.close()
+  }, [])
+  const sceneKey = activeScenes.map(s => s.id).join(',')
+  useEffect(() => {
+    syncState.current = {
+      index: currentScene,
+      scenes: activeScenes.map(s => ({ id: s.id, title: s.title })),
+    }
+    syncRef.current?.send({ type: 'state', ...syncState.current })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentScene, sceneKey])
+
   useEffect(() => {
     if (currentScene >= activeScenes.length) {
       setCurrentScene(Math.max(0, activeScenes.length - 1))
@@ -86,6 +111,7 @@ function App() {
       if (isTyping) { if (e.key === 'Escape') activeElement.blur(); return }
       if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') { e.preventDefault(); nextScene() }
       else if (e.key === 'ArrowLeft' || e.key === 'Backspace') { e.preventDefault(); prevScene() }
+      else if (e.key === 'p' || e.key === 'P') openPresenter()
       else if (e.key >= '1' && e.key <= '9') navigateToScene(parseInt(e.key) - 1)
       else if (e.key === '0') navigateToScene(9)
     }
