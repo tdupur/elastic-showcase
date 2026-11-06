@@ -16,6 +16,7 @@ Parse the following from `$ARGUMENTS` (accept natural language or flags):
 | **objective** | `--objective` | The Elastic feature or capability name (e.g. "Elastic Security AI Assistant") |
 | **url** | `--url` | One or more documentation or blog URLs (space-separated or comma-separated) |
 | **name** | `--name` | Folder slug for the project (e.g. `security-ai-assistant`) — derive from objective if omitted |
+| **presenter-notes** *(optional)* | `--presenter-notes` | Apply the Presenter Notes add-on (Step 11) without asking. If omitted, Step 11 asks at the end of the build. |
 
 **Examples of valid invocations:**
 ```
@@ -98,8 +99,9 @@ Map the extracted content to the standard 10-scene structure below. Decide which
 
 | # | Scene ID | Scene File | Purpose | Content Source |
 |---|---|---|---|---|
-| 0 | `hero` | `HeroScene.jsx` | Title slide — feature name + value prop | Feature name + one-liner |
-| 1 | `team` | `TeamScene.jsx` | Team introductions | Driven by Settings — **keep as-is from template, no content changes** |
+| 0 | `hero-static` | `HeroStaticScene.jsx` | **Default title slide** — logo + feature name + badges (clean, no interaction required) | Feature name + one-liner |
+| 1 | `hero` | `HeroScene.jsx` | **Optional animated intro** — types out topic name, reveals title + badges (**default hidden**) | Feature name + one-liner |
+| 2 | `team` | `TeamScene.jsx` | Team introductions | Driven by Settings — **keep as-is from template, no content changes** |
 | 2 | `agenda` | `AgendaScene.jsx` | Auto-generated agenda grid | **Keep as-is — auto-generates from scene list** |
 | 3 | `challenge` | `ChallengeScene.jsx` | The problem being solved | Pain points, why this exists |
 | 4 | `what-is-x` | `WhatIsXScene.jsx` | Core concept explained | What it is, how it works |
@@ -110,10 +112,16 @@ Map the extracted content to the standard 10-scene structure below. Decide which
 | 9 | `next-steps` | `NextStepsScene.jsx` | CTAs, checklist, demo link | Docs links, trial URLs, contact |
 
 **Pre-built template scenes — do NOT regenerate these:**
-- `HeroScene.jsx` — update the four constants at the top (`SHOWCASE_TITLE_LINE1/2`, `SHOWCASE_SUBTITLE`, `SHOWCASE_BADGES`)
+- `HeroStaticScene.jsx` — **default first scene**. Update the four constants at the top (`SHOWCASE_TITLE_LINE1/2`, `SHOWCASE_SUBTITLE`, `SHOWCASE_BADGES`). Keep `defaultHidden` absent (it is the default-on scene).
+- `HeroScene.jsx` — **optional animated scene** (default hidden). Update the five constants at the top (`SHOWCASE_SEARCH_TEXT`, `SHOWCASE_TITLE_LINE1/2`, `SHOWCASE_SUBTITLE`, `SHOWCASE_BADGES`). Keep `defaultHidden: true` in App.jsx; presenters can enable it via Settings → Scenes if they want the animated search-bar opening.
 - `TeamScene.jsx` — keep entirely as-is, driven by Settings
 - `AgendaScene.jsx` — keep entirely as-is, auto-generates from scene list with clickable tiles
 - `NextStepsScene.jsx` — already includes Back to Topics button and Click-Through Demo tile; only update the `actions` array with showcase-specific CTAs (trial URL, docs URL, contact URL). For the Click-Through Demo tile set `url: '__DEMO_URL__'` (template sentinel) and add `const FALLBACK_DEMO_URL = 'https://elastic.navattic.com/...'` if a Navattic link is known, then use `demoUrl || FALLBACK_DEMO_URL` in the render loop.
+
+**Pre-built components — do NOT regenerate these (copy from `_template/src/components/`):**
+- `SceneSettings.jsx` — includes scene toggle/reorder, demo URL input, and Team tab with **drag-handle grab-to-reorder for team members** (Framer Motion `Reorder.Group` + `useDragControls`). The `useDemoUrl` and `useEnabledScenes` hooks live here — do not remove or re-add them.
+- `Navigation.jsx` — animated dot-chain nav with prev/next arrows. Do not modify.
+- `ErrorBoundary.jsx` — per-scene error isolation. Do not modify.
 
 Only create net-new scene files for the feature content (Challenge, WhatIsX, Architecture, etc.).
 
@@ -223,6 +231,7 @@ Open `src/App.jsx` in the new project and:
 2. Register them in the `scenes` array with correct metadata:
 
 ```jsx
+import HeroStaticScene from './scenes/HeroStaticScene'
 import HeroScene from './scenes/HeroScene'
 import TeamScene from './scenes/TeamScene'
 import AgendaScene from './scenes/AgendaScene'
@@ -230,10 +239,11 @@ import ChallengeScene from './scenes/ChallengeScene'
 // ... all other scenes
 
 const scenes = [
-  { id: 'hero',        component: HeroScene,    title: 'Introduction',         hideFromAgenda: true },
-  { id: 'team',        component: TeamScene,     title: 'Team Introductions',   hideFromAgenda: true },
-  { id: 'agenda',      component: AgendaScene,   title: 'Agenda',               hideFromAgenda: true },
-  { id: 'challenge',   component: ChallengeScene, title: 'The Problem',         description: '...', duration: '3 min' },
+  { id: 'hero-static', component: HeroStaticScene, title: 'Introduction',          hideFromAgenda: true },
+  { id: 'hero',        component: HeroScene,        title: 'Introduction (Animated)', hideFromAgenda: true, defaultHidden: true },
+  { id: 'team',        component: TeamScene,         title: 'Team Introductions',   hideFromAgenda: true },
+  { id: 'agenda',      component: AgendaScene,       title: 'Agenda',               hideFromAgenda: true },
+  { id: 'challenge',   component: ChallengeScene,    title: 'The Problem',          description: '...', duration: '3 min' },
   // ... etc
 ]
 ```
@@ -343,6 +353,80 @@ Return a summary to the user:
     → vercel.com/dashboard → Add New Project → Root Directory: {name}
     → Project name: elastic-{name}-showcase
     → Once live, update the Vercel URL in README.md and push again
+
+➕ Optional add-on available: Presenter Notes (speaker notes on a second screen).
+```
+
+Then go to Step 11 and **ask** the user whether they want it. Never apply it unasked.
+
+---
+
+### STEP 11 — OPTIONAL ADD-ON: Presenter Notes (second-screen speaker notes)
+
+**Optional. Off by default. Only run this step if the user says yes.** Ask once, at the end of every primary build, using AskUserQuestion:
+
+> "Add the Presenter Notes add-on? It gives you a private notes window for a second display (HDMI/projector) while the audience sees only the deck."  Options: **Yes, add it** / **No, skip**.
+
+If the user declines, stop. If the build was already requested with the add-on in the original prompt (for example "with presenter notes"), skip the question and run it.
+
+**What it is:** pressing **P** in the deck opens a second window (`?presenter`) with SAY / DO ON SCREEN / WATCH OUT notes per scene, an up-next preview, a scene list, and total + per-scene timers. The two windows stay in sync through `BroadcastChannel` (same origin required). The audience deck shows no notes.
+
+**Kit location:** `~/Demos/elastic-showcases/_addons/presenter-notes/` — never copy it by hand; always use the script. `_template` stays clean so default builds do not include the add-on.
+
+#### 11a — Apply the kit
+```bash
+python3 ~/Demos/elastic-showcases/_addons/presenter-notes/apply.py \
+        ~/Demos/elastic-showcases/{name}
+```
+The script is idempotent and all-or-nothing: it validates every anchor first and writes nothing if one is missing. It creates `src/presenter/{sync.js,PresenterView.jsx,notes.js}`, patches `src/main.jsx` and `src/App.jsx`, and gives the showcase a unique channel name from its folder name. Use `--dry-run` to preview.
+
+If it exits with an anchor error (very old showcase), stop, tell the user which anchor failed, and do not hand-patch unless the user asks.
+
+#### 11b — Write `src/presenter/notes.js` for this showcase
+Overwrite the stub. `NOTES` is keyed by **scene id** exactly as registered in `App.jsx`, including `hero-static`, `hero`, `team`, `agenda`, and `next-steps`:
+
+```js
+export const TOTAL_MINUTES = 15            // sum of scene minutes, rounded
+
+export const NOTES = {
+  'scene-id': {
+    minutes: 2,                            // target time (0 = no target, e.g. hidden/team scenes)
+    say:   ['Talk-track line, in speaking order.'],
+    doIt:  ['What to click or show on screen.'],
+    watch: ['Claim NOT to make / thing to verify.'],
+  },
+}
+export const FALLBACK_NOTE = { minutes: 0, say: ['No notes for this scene.'], doIt: [], watch: [] }
+```
+Rules:
+- Base everything on the source material fetched in Step 1. Do not invent numbers, dates, pricing, or availability.
+- `watch` must flag anything unreleased, unverified, or illustrative (for example "not open source", "no GA date", "example query is illustrative").
+- For each interactive scene (tabs, steppers, toggles), tell the presenter what to click in `doIt`.
+- Keep lines short enough to read at a glance (about 50 words per scene in `say`).
+- **notes.js ships in the public site bundle.** Never include anything private, internal, or customer-specific.
+
+#### 11c — Build, then test
+```bash
+cd ~/Demos/elastic-showcases/{name}
+npm run build        # must pass with zero errors
+```
+Then tell the user how to try it locally: `npm run dev`, open `http://localhost:5173/`, press **P**, drag the notes window to the second display. Both windows must use the same address (do not mix `localhost` and an IP). Offer to start the dev server for them.
+
+#### 11d — Commit and push (after the user is happy, or immediately if they said to)
+```bash
+cd ~/Demos/elastic-showcases
+git add {name}/src
+git commit -m "Add presenter notes add-on to {name} showcase"
+git push origin main
+```
+If the push is rejected because the remote moved, `git pull --rebase origin main` and push again. Never force-push.
+
+#### 11e — Report
+```
+➕ Presenter Notes add-on applied to {name}
+   Open in the deck: press P  →  notes window (drag to second display)
+   Edit notes: {name}/src/presenter/notes.js
+   Timers: T = start/pause. Arrow keys work in both windows.
 ```
 
 ---
@@ -356,7 +440,7 @@ Before pushing, verify:
 - [ ] NextSteps scene has working URLs (no `null` url values)
 - [ ] No imports from `@fortawesome/free-brands-svg-icons`
 - [ ] `npm run build` exits with zero errors and zero warnings about missing modules
-- [ ] HeroScene shows the correct feature name and value proposition
+- [ ] HeroStaticScene (default first scene) shows the correct feature name and value proposition
 - [ ] TeamScene is present and functional (driven by Settings — no hardcoded members)
 - [ ] AgendaScene tiles are clickable and navigate to the correct scenes
 - [ ] NextStepsScene has a Back to Topics button that returns to the Agenda slide
@@ -364,6 +448,7 @@ Before pushing, verify:
 - [ ] README.md Live Showcases table includes the new showcase row
 - [ ] README.md Project Structure tree includes the new showcase folder and scenes
 - [ ] README.md Roadmap includes the new showcase as a checked item
+- [ ] *(Only if the Presenter Notes add-on was chosen)* `src/presenter/notes.js` has an entry for every scene id in `App.jsx`, and `npm run build` still passes
 
 ---
 
@@ -374,4 +459,6 @@ Before pushing, verify:
 | `~/Demos/elastic-showcases/_template/` | Source template to copy from |
 | `~/Demos/elastic-showcases/{name}/` | New showcase output |
 | `~/Demos/elastic-showcases/autoops-cloud-connect/` | Reference implementation |
+| `~/Demos/elastic-showcases/_addons/presenter-notes/` | Optional add-on kit (Step 11): `apply.py` + `files/` |
+| `~/Demos/elastic-showcases/alertzero/src/presenter/` | Reference implementation of the Presenter Notes add-on |
 | `~/.claude/CLAUDE.md` | Global project context |
