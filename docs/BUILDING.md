@@ -291,4 +291,5 @@ git pull
 - [x] Elastic Agent Builder showcase
 - [x] Elastic Observability showcase
 - [x] AlertZero showcase
+- [x] What is Elastic Defend showcase
 - [ ] Additional showcases: EIS, …

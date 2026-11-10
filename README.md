@@ -30,12 +30,13 @@ Expand a pillar to see its showcases. Click a URL to open it, or right-click to 
 </details>
 
 <details>
-<summary><b>Security</b> · Security Overview, AlertZero</summary>
+<summary><b>Security</b> · Security Overview, AlertZero, What is Elastic Defend</summary>
 
 | Showcase | What it covers | URL | Folder | Scenes |
 |---|---|---|---|--:|
 | **Elastic Security Overview** | Agentic SIEM + XDR, AI detection, automation | [https://elastic-security-overview.vercel.app](https://elastic-security-overview.vercel.app) | `elastic-security-overview/` | 11 |
 | **AlertZero** | Agentic AI SOC: Watches, Proposed Actions (tech preview) | [https://elastic-alertzero-preview.vercel.app](https://elastic-alertzero-preview.vercel.app) | `alertzero/` | 12 |
+| **What is Elastic Defend** | Endpoint protection explained: layers, install, response, tuning | *(deploy Vercel project — root dir: `what-is-elastic-defend`)* | `what-is-elastic-defend/` | 14 |
 
 </details>
 
