@@ -8,53 +8,57 @@ These showcases are designed to be used in customer conversations, demos, and en
 
 ## Live Showcases
 
-Find a showcase by pillar — click a name to jump to its description and live link. ⭐ = start here.
+Find a showcase by pillar. Click a pillar name to jump to its section, expand it, then copy the showcase URL and paste it into the browser of your choice. ⭐ = start here.
 
-| **Search** (2) | **Observability** (1) | **Security** (2) | **Platform** (7) |
+| [**Search** (2)](#search) | [**Observability** (1)](#observability) | [**Security** (2)](#security) | [**Platform** (7)](#platform) |
 |---|---|---|---|
-| [Search&nbsp;AI&nbsp;Serverless](#elastic-search-ai-serverless)<br>[Search&nbsp;Use&nbsp;Cases](#search-use-cases) | [Elastic&nbsp;Observability](#what-is-observability) | [Security&nbsp;Overview](#elastic-security-overview)<br>[AlertZero](#alertzero) | [What&nbsp;is&nbsp;Elastic?](#what-is-elastic) ⭐<br>[Cloud&nbsp;Serverless](#elasticsearch-serverless)<br>[Deployment&nbsp;Options](#elastic-deployment-options)<br>[AutoOps](#autoops-cloud-connect)<br>[Platform&nbsp;Workflows](#elastic-platform-workflow)<br>[Agent&nbsp;Builder](#elastic-agent-builder)<br>[Agent&nbsp;Builder&nbsp;Skills](#elastic-ab-skills) |
+| Search&nbsp;AI&nbsp;Serverless<br>Search&nbsp;Use&nbsp;Cases | Elastic&nbsp;Observability | Security&nbsp;Overview<br>AlertZero | What&nbsp;is&nbsp;Elastic? ⭐<br>Cloud&nbsp;Serverless<br>Deployment&nbsp;Options<br>AutoOps<br>Platform&nbsp;Workflows<br>Agent&nbsp;Builder<br>Agent&nbsp;Builder&nbsp;Skills |
 
+<a id="search"></a>
 <details>
 <summary><b>Search</b> — 2 showcases</summary>
 
-| Showcase | What it covers | Live |
+| Showcase | What it covers | URL (copy) |
 |---|---|---|
-| <a id="elastic-search-ai-serverless"></a>**Search AI Serverless** | Search AI Lake, Search Power, vector search, zero-ops | [Open ↗](https://elastic-search-ai-serverless.vercel.app) |
-| <a id="search-use-cases"></a>**Search Use Cases** | Full-text, vector, semantic, hybrid search, RAG, 8 patterns | [Open ↗](https://elastic-search-use-cases-showcase.vercel.app) |
+| **Search AI Serverless** | Search AI Lake, Search Power, vector search, zero-ops | `https://elastic-search-ai-serverless.vercel.app` |
+| **Search Use Cases** | Full-text, vector, semantic, hybrid search, RAG, 8 patterns | `https://elastic-search-use-cases-showcase.vercel.app` |
 
 </details>
 
+<a id="observability"></a>
 <details>
 <summary><b>Observability</b> — 1 showcase</summary>
 
-| Showcase | What it covers | Live |
+| Showcase | What it covers | URL (copy) |
 |---|---|---|
-| <a id="what-is-observability"></a>**Elastic Observability** | Unified logs, metrics, traces, and AIOps at any scale | [Open ↗](https://what-is-observability.vercel.app) |
+| **Elastic Observability** | Unified logs, metrics, traces, and AIOps at any scale | `https://what-is-observability.vercel.app` |
 
 </details>
 
+<a id="security"></a>
 <details>
 <summary><b>Security</b> — 2 showcases</summary>
 
-| Showcase | What it covers | Live |
+| Showcase | What it covers | URL (copy) |
 |---|---|---|
-| <a id="elastic-security-overview"></a>**Elastic Security Overview** | Agentic SIEM + XDR, AI detection, automation | [Open ↗](https://elastic-security-overview.vercel.app) |
-| <a id="alertzero"></a>**AlertZero** | Agentic AI SOC: Watches, Proposed Actions (tech preview) | [Open ↗](https://elastic-alertzero-preview.vercel.app) |
+| **Elastic Security Overview** | Agentic SIEM + XDR, AI detection, automation | `https://elastic-security-overview.vercel.app` |
+| **AlertZero** | Agentic AI SOC: Watches, Proposed Actions (tech preview) | `https://elastic-alertzero-preview.vercel.app` |
 
 </details>
 
-<details open>
+<a id="platform"></a>
+<details>
 <summary><b>Platform</b> — 7 showcases</summary>
 
-| Showcase | What it covers | Live |
+| Showcase | What it covers | URL (copy) |
 |---|---|---|
-| <a id="what-is-elastic"></a>**What is Elastic?** | Start here: the Search AI Platform, Search, Obs, Security | [Open ↗](https://what-is-elastic.vercel.app) |
-| <a id="elasticsearch-serverless"></a>**Elastic Cloud Serverless** | Serverless overview, project types, Hosted vs Serverless | [Open ↗](https://elastic-serverless-showcase.vercel.app) |
-| <a id="elastic-deployment-options"></a>**Elastic Deployment Options Comparison** | Self-Managed vs Hosted vs Serverless: who owns what | [Open ↗](https://elastic-stack-deployment-options-showcase.vercel.app) |
-| <a id="autoops-cloud-connect"></a>**AutoOps via Cloud Connect** | Connect self-managed clusters to AutoOps, no migration | [Open ↗](https://elastic-autoops-showcase.vercel.app) |
-| <a id="elastic-platform-workflow"></a>**Platform Workflows** | YAML automation in Kibana: insights to outcomes | [Open ↗](https://elastic-platform-workflow.vercel.app) |
-| <a id="elastic-agent-builder"></a>**Elastic Agent Builder** | Custom AI agents on enterprise data: tools, skills | [Open ↗](https://elastic-agent-builder-showcase.vercel.app) |
-| <a id="elastic-ab-skills"></a>**Agent Builder Skills** | Reusable skills that give agents domain expertise | [Open ↗](https://elastic-ab-skills.vercel.app) |
+| **What is Elastic?** | Start here: the Search AI Platform, Search, Obs, Security | `https://what-is-elastic.vercel.app` |
+| **Elastic Cloud Serverless** | Serverless overview, project types, Hosted vs Serverless | `https://elastic-serverless-showcase.vercel.app` |
+| **Elastic Deployment Options Comparison** | Self-Managed vs Hosted vs Serverless: who owns what | `https://elastic-stack-deployment-options-showcase.vercel.app` |
+| **AutoOps via Cloud Connect** | Connect self-managed clusters to AutoOps, no migration | `https://elastic-autoops-showcase.vercel.app` |
+| **Platform Workflows** | YAML automation in Kibana: insights to outcomes | `https://elastic-platform-workflow.vercel.app` |
+| **Elastic Agent Builder** | Custom AI agents on enterprise data: tools, skills | `https://elastic-agent-builder-showcase.vercel.app` |
+| **Agent Builder Skills** | Reusable skills that give agents domain expertise | `https://elastic-ab-skills.vercel.app` |
 
 </details>
 

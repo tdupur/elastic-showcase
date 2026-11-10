@@ -283,18 +283,15 @@ npm run build
 
 Open `~/Demos/elastic-showcases/README.md` and make the following updates:
 
-**Pillar rule:** every showcase belongs to exactly ONE pillar — **Search**, **Observability**, **Security**, or **Platform**. Infer it from the feature (Agent Builder, deployment, Cloud, AutoOps, Workflows and general "What is Elastic" overviews are **Platform**). If it is genuinely ambiguous, ask the user. Keep the README organized by pillar — never append a flat row at the bottom.
+**Pillar rule:** every showcase belongs to exactly ONE pillar — **Search**, **Observability**, **Security**, or **Platform**. Infer it from the feature (Agent Builder, deployment, Cloud, AutoOps, Workflows and general "What is Elastic" overviews are **Platform**). If it is genuinely ambiguous, ask the user. Keep the README organized by pillar — never append a flat row at the bottom. All pillar `<details>` blocks stay **collapsed** (no `open` attribute).
 
-**1. Live Showcases — add to the at-a-glance grid.** In the 4-column table (Search | Observability | Security | Platform), append the showcase to that pillar's cell, `<br>`-separated. Use a SHORT label (about 20 characters max) with `&nbsp;` between words so it never wraps inside the column, and link it to the in-page anchor. Bump the pillar count in the column header, e.g. `**Search** (2)` becomes `**Search** (3)`:
-```markdown
-[{Short&nbsp;Label}](#{name})
-```
+**1. Live Showcases — add to the at-a-glance grid.** In the 4-column table (Search | Observability | Security | Platform), append the showcase's SHORT label (about 20 characters max) to that pillar's cell, `<br>`-separated, with `&nbsp;` between words so it never wraps inside the column. The names are plain text, NOT links (GitHub cannot jump into a collapsed section). Bump the pillar count in the column header, e.g. `[**Search** (2)](#search)` becomes `[**Search** (3)](#search)`.
 
-**2. Live Showcases — add a row to that pillar's collapsible table** (the `<details>` block for the pillar). The `<a id>` is the anchor target for the grid link; keep the description to about 12 words; use the placeholder until the Vercel project exists. Update the `<summary>` count:
+**2. Live Showcases — add a row to that pillar's collapsible table** (the `<details>` block for the pillar) and update the `<summary>` count. Keep the description to about 12 words. The URL is inline code so users can copy it (not a clickable link); use the placeholder until the Vercel project exists:
 ```markdown
-| <a id="{name}"></a>**{Feature Name}** | {short description, ~12 words} | *(deploy Vercel project — root dir: `{name}`)* |
+| **{Feature Name}** | {short description, ~12 words} | `https://{vercel-url}` |
 ```
-Once the Vercel project is live, the Live cell becomes `[Open ↗](https://{vercel-url})`.
+*(Until the real URL exists, write the URL cell as `*(deploy Vercel project — root dir: `{name}`)*`.)*
 
 **3. Project Structure — add a row to the folder table** (keep rows grouped by pillar, `Scenes` = number of scene files):
 ```markdown
@@ -446,7 +443,7 @@ Before pushing, verify:
 - [ ] AgendaScene tiles are clickable and navigate to the correct scenes
 - [ ] NextStepsScene has a Back to Topics button that returns to the Agenda slide
 - [ ] NextStepsScene has a Click-Through Demo tile (uses `__DEMO_URL__` sentinel + `demoUrl || FALLBACK_DEMO_URL` in render loop)
-- [ ] README.md Live Showcases: showcase is in its pillar's grid cell AND in that pillar's collapsible table (counts updated, `<a id>` anchor present)
+- [ ] README.md Live Showcases: showcase is in its pillar's grid cell AND in that pillar's collapsed table with a copyable URL (counts updated, no `open` attribute)
 - [ ] README.md Project Structure: showcase is in the folder table and the Scene-by-scene reference (no new tree, no new `cd` block)
 - [ ] README.md Roadmap includes the new showcase as a checked item
 - [ ] *(Only if the Presenter Notes add-on was chosen)* `src/presenter/notes.js` has an entry for every scene id in `App.jsx`, and `npm run build` still passes
