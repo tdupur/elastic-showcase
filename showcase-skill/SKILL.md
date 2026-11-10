@@ -283,34 +283,22 @@ npm run build
 
 Open `~/Demos/elastic-showcases/README.md` and make the following updates:
 
-**Pillar rule:** every showcase belongs to exactly ONE pillar — **Search**, **Observability**, **Security**, or **Platform**. Infer it from the feature (Agent Builder, deployment, Cloud, AutoOps, Workflows and general "What is Elastic" overviews are **Platform**). If it is genuinely ambiguous, ask the user. Keep the README organized by pillar — never append a flat row at the bottom. All pillar `<details>` blocks stay **collapsed** (no `open` attribute).
+**Pillar rule:** every showcase belongs to exactly ONE pillar — **Search**, **Observability**, **Security**, or **Platform**. Infer it from the feature (Agent Builder, deployment, Cloud, AutoOps, Workflows and general "What is Elastic" overviews are **Platform**). If it is genuinely ambiguous, ask the user. Keep the README organized by pillar — never append a flat row at the bottom. All pillar `<details>` blocks stay **collapsed** (no `open` attribute). The root README is presenter-facing and lean: **do not** add per-showcase trees, `cd` blocks, or scene lists to it.
 
-**1. Live Showcases — add to the at-a-glance grid.** In the 4-column table (Search | Observability | Security | Platform), append the showcase's SHORT label (about 20 characters max) to that pillar's cell, `<br>`-separated, with `&nbsp;` between words so it never wraps inside the column. The names are plain text, NOT links (GitHub cannot jump into a collapsed section). Bump the pillar count in the column header, e.g. `[**Search** (2)](#search)` becomes `[**Search** (3)](#search)`.
+**1. README.md → Live Showcases → grid.** In the 4-column table (Search | Observability | Security | Platform), append the showcase's SHORT label (about 20 characters max) to that pillar's cell, `<br>`-separated, with `&nbsp;` between words so it never wraps inside the column. Names are plain text, NOT links (GitHub cannot jump into a collapsed section). Bump the pillar count in the column header, e.g. `[**Search** (2)](#search)` becomes `[**Search** (3)](#search)`.
 
-**2. Live Showcases — add a row to that pillar's collapsible table** (the `<details>` block for the pillar) and update the `<summary>` count. Keep the description to about 12 words. The URL is inline code so users can copy it (not a clickable link); use the placeholder until the Vercel project exists:
+**2. README.md → Live Showcases → that pillar's collapsible table.** Add one row and update the `<summary>` count. Description is about 12 words. The URL is inline code so users can copy it (not a clickable link). `Scenes` is the number of scene files in `src/scenes/`:
 ```markdown
-| **{Feature Name}** | {short description, ~12 words} | `https://{vercel-url}` |
+| **{Feature Name}** | {short description, ~12 words} | `https://{vercel-url}` | `{name}/` | {N} |
 ```
 *(Until the real URL exists, write the URL cell as `*(deploy Vercel project — root dir: `{name}`)*`.)*
 
-**3. Project Structure — add a row to the folder table** (keep rows grouped by pillar, `Scenes` = number of scene files):
-```markdown
-| {Pillar} | `{name}/` | {Feature Name} | {N} |
-```
-Then add the showcase's scene list to the collapsed **"Scene-by-scene reference"** block, using the same format as the existing entries:
-```
-{Feature Name}  ({name}/src/scenes/)
-   1. HeroScene.jsx                  Title & intro
-   ...
-```
-**Do NOT** add a new per-showcase tree to the Project Structure section, and **do NOT** add a new `cd` block to "Running Locally" — it has one generic block that covers every showcase.
-
-**4. Add a checked item to the Roadmap:**
+**3. docs/BUILDING.md → Roadmap.** Add a checked item (the Roadmap lives in `docs/BUILDING.md`, not the root README):
 ```markdown
 - [x] {Feature Name} showcase
 ```
 
-Save the file before proceeding to Step 9.
+Save the files before proceeding to Step 9.
 
 ---
 
@@ -344,7 +332,7 @@ Return a summary to the user:
 📁 Project:     ~/Demos/elastic-showcases/{name}/
 🎬 Scenes:      [list the scene titles]
 🔨 Build:       Passed
-📝 README:      Updated — Live Showcases (pillar grid + table) + Project Structure + Roadmap
+📝 README:      Updated — Live Showcases (pillar grid + table) + docs/BUILDING.md Roadmap
 🚀 GitHub:      Pushed to main — Vercel auto-deploy triggered
 
 ⚠️  Action needed: Create a new Vercel project for this showcase:
@@ -443,9 +431,9 @@ Before pushing, verify:
 - [ ] AgendaScene tiles are clickable and navigate to the correct scenes
 - [ ] NextStepsScene has a Back to Topics button that returns to the Agenda slide
 - [ ] NextStepsScene has a Click-Through Demo tile (uses `__DEMO_URL__` sentinel + `demoUrl || FALLBACK_DEMO_URL` in render loop)
-- [ ] README.md Live Showcases: showcase is in its pillar's grid cell AND in that pillar's collapsed table with a copyable URL (counts updated, no `open` attribute)
-- [ ] README.md Project Structure: showcase is in the folder table and the Scene-by-scene reference (no new tree, no new `cd` block)
-- [ ] README.md Roadmap includes the new showcase as a checked item
+- [ ] README.md Live Showcases: showcase is in its pillar's grid cell AND in that pillar's collapsed table with a copyable URL, folder, and scene count (counts updated, no `open` attribute)
+- [ ] README.md has NO new per-showcase tree, `cd` block, or scene list (presenter README stays lean)
+- [ ] docs/BUILDING.md Roadmap includes the new showcase as a checked item
 - [ ] *(Only if the Presenter Notes add-on was chosen)* `src/presenter/notes.js` has an entry for every scene id in `App.jsx`, and `npm run build` still passes
 
 ---
