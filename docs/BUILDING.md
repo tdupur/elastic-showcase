@@ -176,7 +176,7 @@ Every showcase built from `_template/` follows this opening sequence:
    npm run build
    ```
 
-7. **Update the root `README.md`** — pick the showcase's pillar (Search, Observability, Security, or Platform), add its name to that pillar's column in the Live Showcases grid (bump the count), and add a row to that pillar's collapsible table (description, URL, folder, scene count). Then add a checked item to the Roadmap below.
+7. **Update the root `README.md`** — pick the showcase's pillar (Search, Observability, Security, or Platform), add its short name to that pillar's collapsible bar in Live Showcases, and add a row to that pillar's table (description, URL link, folder, scene count). Then add a checked item to the Roadmap below.
 
 8. **Commit and push:**
    ```bash

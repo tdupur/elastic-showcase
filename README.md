@@ -8,57 +8,49 @@ Interactive, browser-based presentation apps that demonstrate Elastic features �
 
 ## Live Showcases
 
-Find a showcase by pillar. Click a pillar name to jump to its section, expand it, then copy the showcase URL and paste it into the browser of your choice. ⭐ = start here.
+Expand a pillar to see its showcases. Click a URL to open it, or right-click to copy it / open it in a new window. ⭐ = start here.
 
-| [**Search** (2)](#search) | [**Observability** (1)](#observability) | [**Security** (2)](#security) | [**Platform** (7)](#platform) |
-|---|---|---|---|
-| Search&nbsp;AI&nbsp;Serverless<br>Search&nbsp;Use&nbsp;Cases | Elastic&nbsp;Observability | Security&nbsp;Overview<br>AlertZero | What&nbsp;is&nbsp;Elastic? ⭐<br>Cloud&nbsp;Serverless<br>Deployment&nbsp;Options<br>AutoOps<br>Platform&nbsp;Workflows<br>Agent&nbsp;Builder<br>Agent&nbsp;Builder&nbsp;Skills |
-
-<a id="search"></a>
 <details>
-<summary><b>Search</b> — 2 showcases</summary>
+<summary><b>Search</b> · Search AI Serverless, Search Use Cases</summary>
 
-| Showcase | What it covers | URL (copy) | Folder | Scenes |
+| Showcase | What it covers | URL | Folder | Scenes |
 |---|---|---|---|--:|
-| **Search AI Serverless** | Search AI Lake, Search Power, vector search, zero-ops | `https://elastic-search-ai-serverless.vercel.app` | `elastic-search-ai-serverless/` | 10 |
-| **Search Use Cases** | Full-text, vector, semantic, hybrid search, RAG, 8 patterns | `https://elastic-search-use-cases-showcase.vercel.app` | `search-use-cases/` | 11 |
+| **Search AI Serverless** | Search AI Lake, Search Power, vector search, zero-ops | [https://elastic-search-ai-serverless.vercel.app](https://elastic-search-ai-serverless.vercel.app) | `elastic-search-ai-serverless/` | 10 |
+| **Search Use Cases** | Full-text, vector, semantic, hybrid search, RAG, 8 patterns | [https://elastic-search-use-cases-showcase.vercel.app](https://elastic-search-use-cases-showcase.vercel.app) | `search-use-cases/` | 11 |
 
 </details>
 
-<a id="observability"></a>
 <details>
-<summary><b>Observability</b> — 1 showcase</summary>
+<summary><b>Observability</b> · Elastic Observability</summary>
 
-| Showcase | What it covers | URL (copy) | Folder | Scenes |
+| Showcase | What it covers | URL | Folder | Scenes |
 |---|---|---|---|--:|
-| **Elastic Observability** | Unified logs, metrics, traces, and AIOps at any scale | `https://what-is-observability.vercel.app` | `what-is-observability/` | 10 |
+| **Elastic Observability** | Unified logs, metrics, traces, and AIOps at any scale | [https://what-is-observability.vercel.app](https://what-is-observability.vercel.app) | `what-is-observability/` | 10 |
 
 </details>
 
-<a id="security"></a>
 <details>
-<summary><b>Security</b> — 2 showcases</summary>
+<summary><b>Security</b> · Security Overview, AlertZero</summary>
 
-| Showcase | What it covers | URL (copy) | Folder | Scenes |
+| Showcase | What it covers | URL | Folder | Scenes |
 |---|---|---|---|--:|
-| **Elastic Security Overview** | Agentic SIEM + XDR, AI detection, automation | `https://elastic-security-overview.vercel.app` | `elastic-security-overview/` | 11 |
-| **AlertZero** | Agentic AI SOC: Watches, Proposed Actions (tech preview) | `https://elastic-alertzero-preview.vercel.app` | `alertzero/` | 12 |
+| **Elastic Security Overview** | Agentic SIEM + XDR, AI detection, automation | [https://elastic-security-overview.vercel.app](https://elastic-security-overview.vercel.app) | `elastic-security-overview/` | 11 |
+| **AlertZero** | Agentic AI SOC: Watches, Proposed Actions (tech preview) | [https://elastic-alertzero-preview.vercel.app](https://elastic-alertzero-preview.vercel.app) | `alertzero/` | 12 |
 
 </details>
 
-<a id="platform"></a>
 <details>
-<summary><b>Platform</b> — 7 showcases</summary>
+<summary><b>Platform</b> · What is Elastic? ⭐, Cloud Serverless, Deployment Options, AutoOps, Platform Workflows, Agent Builder, Agent Builder Skills</summary>
 
-| Showcase | What it covers | URL (copy) | Folder | Scenes |
+| Showcase | What it covers | URL | Folder | Scenes |
 |---|---|---|---|--:|
-| **What is Elastic?** | Start here: the Search AI Platform, Search, Obs, Security | `https://what-is-elastic.vercel.app` | `what-is-elastic/` | 10 |
-| **Elastic Cloud Serverless** | Serverless overview, project types, Hosted vs Serverless | `https://elastic-serverless-showcase.vercel.app` | `elasticsearch-serverless/` | 9 |
-| **Elastic Deployment Options Comparison** | Self-Managed vs Hosted vs Serverless: who owns what | `https://elastic-stack-deployment-options-showcase.vercel.app` | `elastic-deployment-options/` | 9 |
-| **AutoOps via Cloud Connect** | Connect self-managed clusters to AutoOps, no migration | `https://elastic-autoops-showcase.vercel.app` | `autoops-cloud-connect/` | 11 |
-| **Platform Workflows** | YAML automation in Kibana: insights to outcomes | `https://elastic-platform-workflow.vercel.app` | `elastic-platform-workflow/` | 11 |
-| **Elastic Agent Builder** | Custom AI agents on enterprise data: tools, skills | `https://elastic-agent-builder-showcase.vercel.app` | `elastic-agent-builder/` | 10 |
-| **Agent Builder Skills** | Reusable skills that give agents domain expertise | `https://elastic-ab-skills.vercel.app` | `elastic-ab-skills/` | 10 |
+| **What is Elastic?** | Start here: the Search AI Platform, Search, Obs, Security | [https://what-is-elastic.vercel.app](https://what-is-elastic.vercel.app) | `what-is-elastic/` | 10 |
+| **Elastic Cloud Serverless** | Serverless overview, project types, Hosted vs Serverless | [https://elastic-serverless-showcase.vercel.app](https://elastic-serverless-showcase.vercel.app) | `elasticsearch-serverless/` | 9 |
+| **Elastic Deployment Options Comparison** | Self-Managed vs Hosted vs Serverless: who owns what | [https://elastic-stack-deployment-options-showcase.vercel.app](https://elastic-stack-deployment-options-showcase.vercel.app) | `elastic-deployment-options/` | 9 |
+| **AutoOps via Cloud Connect** | Connect self-managed clusters to AutoOps, no migration | [https://elastic-autoops-showcase.vercel.app](https://elastic-autoops-showcase.vercel.app) | `autoops-cloud-connect/` | 11 |
+| **Platform Workflows** | YAML automation in Kibana: insights to outcomes | [https://elastic-platform-workflow.vercel.app](https://elastic-platform-workflow.vercel.app) | `elastic-platform-workflow/` | 11 |
+| **Elastic Agent Builder** | Custom AI agents on enterprise data: tools, skills | [https://elastic-agent-builder-showcase.vercel.app](https://elastic-agent-builder-showcase.vercel.app) | `elastic-agent-builder/` | 10 |
+| **Agent Builder Skills** | Reusable skills that give agents domain expertise | [https://elastic-ab-skills.vercel.app](https://elastic-ab-skills.vercel.app) | `elastic-ab-skills/` | 10 |
 
 </details>
 
