@@ -283,29 +283,30 @@ npm run build
 
 Open `~/Demos/elastic-showcases/README.md` and make the following updates:
 
-**1. Add a row to the Live Showcases table:**
+**Pillar rule:** every showcase belongs to exactly ONE pillar — **Search**, **Observability**, **Security**, or **Platform**. Infer it from the feature (Agent Builder, deployment, Cloud, AutoOps, Workflows and general "What is Elastic" overviews are **Platform**). If it is genuinely ambiguous, ask the user. Keep the README organized by pillar — never append a flat row at the bottom.
+
+**1. Live Showcases — add to the at-a-glance grid.** In the 4-column table (Search | Observability | Security | Platform), append the showcase to that pillar's cell, `<br>`-separated. Use a SHORT label (about 20 characters max) with `&nbsp;` between words so it never wraps inside the column, and link it to the in-page anchor. Bump the pillar count in the column header, e.g. `**Search** (2)` becomes `**Search** (3)`:
 ```markdown
-| **{Feature Name}** | {one-line description} | `{name}/` | *(deploy Vercel project — root dir: `{name}`)* |
+[{Short&nbsp;Label}](#{name})
 ```
 
-**2. Add the new showcase folder to the Project Structure tree**, listing each scene file with a one-line comment describing its purpose:
+**2. Live Showcases — add a row to that pillar's collapsible table** (the `<details>` block for the pillar). The `<a id>` is the anchor target for the grid link; keep the description to about 12 words; use the placeholder until the Vercel project exists. Update the `<summary>` count:
+```markdown
+| <a id="{name}"></a>**{Feature Name}** | {short description, ~12 words} | *(deploy Vercel project — root dir: `{name}`)* |
 ```
-└── {name}/                           # {Feature Name} showcase
-    └── src/scenes/
-        ├── HeroScene.jsx              # Scene 1  — Title & intro
-        ├── TeamScene.jsx              # Scene 2  — Presenter introductions
-        ├── AgendaScene.jsx            # Scene 3  — Clickable agenda grid
-        ├── {SceneName}.jsx            # Scene N  — {description}
-        └── NextStepsScene.jsx         # Scene N  — CTAs, demo link
-```
+Once the Vercel project is live, the Live cell becomes `[Open ↗](https://{vercel-url})`.
 
-**3. Add a `cd` block to the Running Locally section:**
-```bash
-# {Feature Name}
-cd {name}
-npm install
-npm run dev
+**3. Project Structure — add a row to the folder table** (keep rows grouped by pillar, `Scenes` = number of scene files):
+```markdown
+| {Pillar} | `{name}/` | {Feature Name} | {N} |
 ```
+Then add the showcase's scene list to the collapsed **"Scene-by-scene reference"** block, using the same format as the existing entries:
+```
+{Feature Name}  ({name}/src/scenes/)
+   1. HeroScene.jsx                  Title & intro
+   ...
+```
+**Do NOT** add a new per-showcase tree to the Project Structure section, and **do NOT** add a new `cd` block to "Running Locally" — it has one generic block that covers every showcase.
 
 **4. Add a checked item to the Roadmap:**
 ```markdown
@@ -332,7 +333,7 @@ Vercel auto-deploys on push to `main`. The new showcase will be live within ~60 
 2. Import the `elastic-showcases` GitHub repo
 3. Set **Root Directory** to `{name}` (the new showcase folder)
 4. Set the project name to `elastic-{name}-showcase`
-5. Deploy — then update the Vercel URL in `README.md` Live Showcases table and push again
+5. Deploy — then replace the placeholder with the Vercel URL in the showcase's pillar table in `README.md` (Live Showcases) and push again
 
 ---
 
@@ -346,13 +347,13 @@ Return a summary to the user:
 📁 Project:     ~/Demos/elastic-showcases/{name}/
 🎬 Scenes:      [list the scene titles]
 🔨 Build:       Passed
-📝 README:      Updated — Live Showcases table + Project Structure + Roadmap
+📝 README:      Updated — Live Showcases (pillar grid + table) + Project Structure + Roadmap
 🚀 GitHub:      Pushed to main — Vercel auto-deploy triggered
 
 ⚠️  Action needed: Create a new Vercel project for this showcase:
     → vercel.com/dashboard → Add New Project → Root Directory: {name}
     → Project name: elastic-{name}-showcase
-    → Once live, update the Vercel URL in README.md and push again
+    → Once live, replace the placeholder in the pillar table under Live Showcases in README.md and push again
 
 ➕ Optional add-on available: Presenter Notes (speaker notes on a second screen).
 ```
@@ -445,8 +446,8 @@ Before pushing, verify:
 - [ ] AgendaScene tiles are clickable and navigate to the correct scenes
 - [ ] NextStepsScene has a Back to Topics button that returns to the Agenda slide
 - [ ] NextStepsScene has a Click-Through Demo tile (uses `__DEMO_URL__` sentinel + `demoUrl || FALLBACK_DEMO_URL` in render loop)
-- [ ] README.md Live Showcases table includes the new showcase row
-- [ ] README.md Project Structure tree includes the new showcase folder and scenes
+- [ ] README.md Live Showcases: showcase is in its pillar's grid cell AND in that pillar's collapsible table (counts updated, `<a id>` anchor present)
+- [ ] README.md Project Structure: showcase is in the folder table and the Scene-by-scene reference (no new tree, no new `cd` block)
 - [ ] README.md Roadmap includes the new showcase as a checked item
 - [ ] *(Only if the Presenter Notes add-on was chosen)* `src/presenter/notes.js` has an entry for every scene id in `App.jsx`, and `npm run build` still passes
 

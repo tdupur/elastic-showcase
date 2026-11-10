@@ -8,20 +8,55 @@ These showcases are designed to be used in customer conversations, demos, and en
 
 ## Live Showcases
 
-| Showcase | Description | Folder | Vercel URL |
+Find a showcase by pillar — click a name to jump to its description and live link. ⭐ = start here.
+
+| **Search** (2) | **Observability** (1) | **Security** (2) | **Platform** (7) |
 |---|---|---|---|
-| **AutoOps via Cloud Connect** | How self-managed clusters connect to AutoOps on Elastic Cloud without migration | `autoops-cloud-connect/` | [elastic-autoops-showcase.vercel.app](https://elastic-autoops-showcase.vercel.app) |
-| **Elastic Cloud Serverless** | Overview, benefits, project types, and Hosted vs Serverless deployment comparison | `elasticsearch-serverless/` | [elastic-serverless-showcase.vercel.app](https://elastic-serverless-showcase.vercel.app) |
-| **Elastic Deployment Options Comparison** | Self-Managed vs Cloud Hosted vs Serverless — shared responsibility model, feature comparison, and decision guide | `elastic-deployment-options/` | [elastic-stack-deployment-options-showcase.vercel.app](https://elastic-stack-deployment-options-showcase.vercel.app) |
-| **Search AI Serverless** | Elasticsearch Serverless — Search AI Lake architecture, Search Power settings, vector search, and zero-ops deployment | `elastic-search-ai-serverless/` | [elastic-search-ai-serverless.vercel.app](https://elastic-search-ai-serverless.vercel.app) |
-| **Agent Builder Skills** | Reusable instruction sets that give AI agents specialized domain expertise — built-in skills reference, custom skill authoring, and dynamic activation | `elastic-ab-skills/` | [elastic-ab-skills.vercel.app](https://elastic-ab-skills.vercel.app) |
-| **Elastic Security Overview** | Agentic security operations platform — SIEM, XDR, AI-powered detection, automation, and integrations overview | `elastic-security-overview/` | [elastic-security-overview.vercel.app](https://elastic-security-overview.vercel.app) |
-| **Platform Workflows** | YAML-defined automation in Kibana — turn data insights into automated outcomes without external tools | `elastic-platform-workflow/` | [elastic-platform-workflow.vercel.app](https://elastic-platform-workflow.vercel.app) |
-| **What is Elastic?** | Intro to the Elastic Search AI Platform — Search, Observability, Security, the Elastic Stack, and deployment options | `what-is-elastic/` | [what-is-elastic.vercel.app](https://what-is-elastic.vercel.app) |
-| **Search Use Cases** | What you can build with Elasticsearch — full-text, vector, semantic, hybrid search, RAG, and 8 use case patterns | `search-use-cases/` | [elastic-search-use-cases-showcase.vercel.app](https://elastic-search-use-cases-showcase.vercel.app) |
-| **Elastic Agent Builder** | Build custom AI agents grounded in enterprise data — tools, skills, architecture, and built-in capabilities | `elastic-agent-builder/` | [elastic-agent-builder-showcase.vercel.app](https://elastic-agent-builder-showcase.vercel.app) |
-| **Elastic Observability** | Unified logs, metrics, traces, and AIOps — from any source, at any scale | `what-is-observability/` | [what-is-observability.vercel.app](https://what-is-observability.vercel.app) |
-| **AlertZero** | Agentic AI SOC automation in Elastic Security — Watches, Proposed Actions, and per-Worker autonomy (upcoming technical preview) | `alertzero/` | [elastic-alertzero-preview.vercel.app](https://elastic-alertzero-preview.vercel.app) |
+| [Search&nbsp;AI&nbsp;Serverless](#elastic-search-ai-serverless)<br>[Search&nbsp;Use&nbsp;Cases](#search-use-cases) | [Elastic&nbsp;Observability](#what-is-observability) | [Security&nbsp;Overview](#elastic-security-overview)<br>[AlertZero](#alertzero) | [What&nbsp;is&nbsp;Elastic?](#what-is-elastic) ⭐<br>[Cloud&nbsp;Serverless](#elasticsearch-serverless)<br>[Deployment&nbsp;Options](#elastic-deployment-options)<br>[AutoOps](#autoops-cloud-connect)<br>[Platform&nbsp;Workflows](#elastic-platform-workflow)<br>[Agent&nbsp;Builder](#elastic-agent-builder)<br>[Agent&nbsp;Builder&nbsp;Skills](#elastic-ab-skills) |
+
+<details>
+<summary><b>Search</b> — 2 showcases</summary>
+
+| Showcase | What it covers | Live |
+|---|---|---|
+| <a id="elastic-search-ai-serverless"></a>**Search AI Serverless** | Search AI Lake, Search Power, vector search, zero-ops | [Open ↗](https://elastic-search-ai-serverless.vercel.app) |
+| <a id="search-use-cases"></a>**Search Use Cases** | Full-text, vector, semantic, hybrid search, RAG, 8 patterns | [Open ↗](https://elastic-search-use-cases-showcase.vercel.app) |
+
+</details>
+
+<details>
+<summary><b>Observability</b> — 1 showcase</summary>
+
+| Showcase | What it covers | Live |
+|---|---|---|
+| <a id="what-is-observability"></a>**Elastic Observability** | Unified logs, metrics, traces, and AIOps at any scale | [Open ↗](https://what-is-observability.vercel.app) |
+
+</details>
+
+<details>
+<summary><b>Security</b> — 2 showcases</summary>
+
+| Showcase | What it covers | Live |
+|---|---|---|
+| <a id="elastic-security-overview"></a>**Elastic Security Overview** | Agentic SIEM + XDR, AI detection, automation | [Open ↗](https://elastic-security-overview.vercel.app) |
+| <a id="alertzero"></a>**AlertZero** | Agentic AI SOC: Watches, Proposed Actions (tech preview) | [Open ↗](https://elastic-alertzero-preview.vercel.app) |
+
+</details>
+
+<details open>
+<summary><b>Platform</b> — 7 showcases</summary>
+
+| Showcase | What it covers | Live |
+|---|---|---|
+| <a id="what-is-elastic"></a>**What is Elastic?** | Start here: the Search AI Platform, Search, Obs, Security | [Open ↗](https://what-is-elastic.vercel.app) |
+| <a id="elasticsearch-serverless"></a>**Elastic Cloud Serverless** | Serverless overview, project types, Hosted vs Serverless | [Open ↗](https://elastic-serverless-showcase.vercel.app) |
+| <a id="elastic-deployment-options"></a>**Elastic Deployment Options Comparison** | Self-Managed vs Hosted vs Serverless: who owns what | [Open ↗](https://elastic-stack-deployment-options-showcase.vercel.app) |
+| <a id="autoops-cloud-connect"></a>**AutoOps via Cloud Connect** | Connect self-managed clusters to AutoOps, no migration | [Open ↗](https://elastic-autoops-showcase.vercel.app) |
+| <a id="elastic-platform-workflow"></a>**Platform Workflows** | YAML automation in Kibana: insights to outcomes | [Open ↗](https://elastic-platform-workflow.vercel.app) |
+| <a id="elastic-agent-builder"></a>**Elastic Agent Builder** | Custom AI agents on enterprise data: tools, skills | [Open ↗](https://elastic-agent-builder-showcase.vercel.app) |
+| <a id="elastic-ab-skills"></a>**Agent Builder Skills** | Reusable skills that give agents domain expertise | [Open ↗](https://elastic-ab-skills.vercel.app) |
+
+</details>
 
 ---
 
@@ -42,8 +77,9 @@ These showcases are designed to be used in customer conversations, demos, and en
 
 ## Project Structure
 
+Every showcase is a copy of `_template/` — one folder per showcase, each with its own `src/scenes/`.
+
 ```
-elastic-showcases/
 ├── _template/                        # Reusable base for new showcases
 │   ├── src/
 │   │   ├── App.jsx                   # Scene registry + navigation wiring
@@ -64,232 +100,186 @@ elastic-showcases/
 │   ├── vite.config.js
 │   ├── tailwind.config.js
 │   └── README.md                     # How-to guide for this template
-│
-├── autoops-cloud-connect/            # AutoOps via Cloud Connect showcase
-│   └── src/scenes/
-│       ├── HeroScene.jsx              # Scene 1  — Title & intro
-│       ├── TeamScene.jsx              # Scene 2  — Presenter introductions
-│       ├── AgendaScene.jsx            # Scene 3  — Clickable agenda grid
-│       ├── ChallengeScene.jsx         # Scene 4  — The problem being solved
-│       ├── WhatIsAutoOpsScene.jsx     # Scene 5  — AutoOps explained
-│       ├── CloudConnectScene.jsx      # Scene 6  — What is Cloud Connect
-│       ├── ArchitectureScene.jsx      # Scene 7  — Animated data flow
-│       ├── InstallationScene.jsx      # Scene 8  — 4 install methods + diagrams
-│       ├── MonitoringScene.jsx        # Scene 9  — What AutoOps monitors
-│       ├── NotificationsScene.jsx     # Scene 10 — 7 notification connectors
-│       └── NextStepsScene.jsx         # Scene 11 — CTAs, checklist, demo link
-│
-├── elasticsearch-serverless/         # Elastic Cloud Serverless showcase
-│   └── src/scenes/
-│       ├── HeroScene.jsx              # Scene 1  — Title & intro
-│       ├── TeamScene.jsx              # Scene 2  — Presenter introductions
-│       ├── AgendaScene.jsx            # Scene 3  — Clickable agenda grid
-│       ├── ChallengeScene.jsx         # Scene 4  — Infrastructure management pain
-│       ├── WhatIsServerlessScene.jsx  # Scene 5  — Overview & architecture
-│       ├── BenefitsScene.jsx          # Scene 6  — 6 key benefits
-│       ├── ProjectTypesScene.jsx      # Scene 7  — Search, Observability, Security
-│       ├── ComparisonScene.jsx        # Scene 8  — Serverless vs Cloud Hosted table
-│       └── NextStepsScene.jsx         # Scene 9  — Trial, docs, demo link
-│
-├── elastic-deployment-options/       # Elastic Deployment Options Comparison showcase
-│   └── src/scenes/
-│       ├── HeroScene.jsx              # Scene 1  — Title & intro
-│       ├── TeamScene.jsx              # Scene 2  — Presenter introductions
-│       ├── AgendaScene.jsx            # Scene 3  — Clickable agenda grid
-│       ├── ChallengeScene.jsx         # Scene 4  — Why choosing wrong model costs you
-│       ├── DeploymentOverviewScene.jsx # Scene 5  — Three ways to run Elastic
-│       ├── SharedResponsibilityScene.jsx # Scene 6  — Who owns what (interactive matrix)
-│       ├── FeatureComparisonScene.jsx  # Scene 7  — Feature availability by deployment
-│       ├── WhenToChooseScene.jsx       # Scene 8  — Decision guide for each model
-│       └── NextStepsScene.jsx          # Scene 9  — Trial, docs, contact
-│
-├── elastic-search-ai-serverless/     # Search AI Serverless showcase
-│   └── src/scenes/
-│       ├── HeroScene.jsx              # Scene 1  — Animated search-bar intro (always on)
-│       ├── HeroStaticScene.jsx        # Scene 2  — Static logo/title/badges (default hidden)
-│       ├── TeamScene.jsx              # Scene 3  — Presenter introductions
-│       ├── AgendaScene.jsx            # Scene 4  — Clickable agenda grid
-│       ├── ChallengeScene.jsx         # Scene 5  — Infrastructure management pain points
-│       ├── WhatIsXScene.jsx           # Scene 6  — Elasticsearch Serverless explained
-│       ├── ArchitectureScene.jsx      # Scene 7  — Search AI Lake & separated compute
-│       ├── SearchPowerScene.jsx       # Scene 8  — On-demand, Performant, High-throughput
-│       ├── CapabilitiesScene.jsx      # Scene 9  — Vector search, ELSER, ES|QL, AI Playground
-│       └── NextStepsScene.jsx         # Scene 10 — Free trial, docs, demo link
-│
-├── elastic-ab-skills/                # Agent Builder Skills showcase
-│   └── src/scenes/
-│       ├── HeroScene.jsx              # Scene 1  — Animated search-bar intro (always on)
-│       ├── HeroStaticScene.jsx        # Scene 2  — Static logo/title/badges (default hidden)
-│       ├── TeamScene.jsx              # Scene 3  — Presenter introductions
-│       ├── AgendaScene.jsx            # Scene 4  — Clickable agenda grid
-│       ├── ChallengeScene.jsx         # Scene 5  — Copy-paste expertise, bloated prompts pain
-│       ├── WhatIsSkillsScene.jsx      # Scene 6  — Skills explained: knowledge, tools, selective loading
-│       ├── HowSkillsWorkScene.jsx     # Scene 7  — Dynamic skill selection & activation flow
-│       ├── BuiltInSkillsScene.jsx     # Scene 8  — Platform, Observability, Security, Elasticsearch skills
-│       ├── CustomSkillsScene.jsx      # Scene 9  — Fields, workflow, best practices for custom skills
-│       └── NextStepsScene.jsx         # Scene 10 — Trial, docs, custom skills guide, contact
-│
-├── elastic-security-overview/        # Elastic Security Overview showcase
-│   └── src/scenes/
-│       ├── HeroScene.jsx              # Scene 1  — Animated search-bar intro (always on)
-│       ├── HeroStaticScene.jsx        # Scene 2  — Static logo/title/badges (default hidden)
-│       ├── TeamScene.jsx              # Scene 3  — Presenter introductions
-│       ├── AgendaScene.jsx            # Scene 4  — Clickable agenda grid
-│       ├── ChallengeScene.jsx         # Scene 5  — Security industry taxes and fragmentation
-│       ├── WhatIsElasticSecurityScene.jsx # Scene 6  — Unified SIEM, XDR & agentic AI platform
-│       ├── ArchitectureScene.jsx      # Scene 7  — Animated data-to-action flow
-│       ├── CapabilitiesScene.jsx      # Scene 8  — Detect, respond, protect (tabbed)
-│       ├── IntegrationsScene.jsx      # Scene 9  — Cloud, endpoint, identity, network connectors
-│       ├── ProofPointsScene.jsx       # Scene 10 — Customer stats & industry recognition
-│       └── NextStepsScene.jsx         # Scene 11 — Free trial, docs, contact, demo link
-│
-├── elastic-platform-workflow/        # Platform Workflows showcase
-│   └── src/scenes/
-│       ├── HeroScene.jsx              # Scene 1  — Animated search-bar intro (always on)
-│       ├── HeroStaticScene.jsx        # Scene 2  — Static logo/title/badges (default hidden)
-│       ├── TeamScene.jsx              # Scene 3  — Presenter introductions
-│       ├── AgendaScene.jsx            # Scene 4  — Clickable agenda grid
-│       ├── ChallengeScene.jsx         # Scene 5  — Alert fatigue, tool fragmentation, manual work
-│       ├── WhatIsWorkflowsScene.jsx   # Scene 6  — YAML-defined automation in Kibana
-│       ├── ArchitectureScene.jsx      # Scene 7  — Triggers, steps, data flow, outcomes
-│       ├── CapabilitiesScene.jsx      # Scene 8  — Action, flow control, and AI steps (tabbed)
-│       ├── UseCasesScene.jsx          # Scene 9  — Security, observability, AI-augmented patterns
-│       ├── InstallationScene.jsx      # Scene 10 — Enable in Kibana + configure privileges
-│       └── NextStepsScene.jsx         # Scene 11 — Docs, first workflow, contact, demo link
-│
-├── what-is-elastic/                  # What is Elastic? showcase
-│   └── src/scenes/
-│       ├── HeroScene.jsx              # Scene 1  — Animated search-bar intro (always on)
-│       ├── HeroStaticScene.jsx        # Scene 2  — Static logo/title/badges (default hidden)
-│       ├── TeamScene.jsx              # Scene 3  — Presenter introductions
-│       ├── AgendaScene.jsx            # Scene 4  — Clickable agenda grid
-│       ├── ChallengeScene.jsx         # Scene 5  — Data silos and fragmented tooling pain
-│       ├── WhatIsElasticScene.jsx     # Scene 6  — The Search AI Platform explained
-│       ├── ArchitectureScene.jsx      # Scene 7  — The Elastic Stack: Ingest, Store, Explore
-│       ├── SolutionsScene.jsx         # Scene 8  — Elasticsearch, Observability, Security
-│       ├── DeploymentScene.jsx        # Scene 9  — Serverless, Cloud Hosted, Self-Managed
-│       └── NextStepsScene.jsx         # Scene 10 — Free trial, docs, contact, demo link
-│
-├── search-use-cases/                 # Search Use Cases showcase
-│   └── src/scenes/
-│       ├── HeroScene.jsx              # Scene 1  — Animated search-bar intro (always on)
-│       ├── HeroStaticScene.jsx        # Scene 2  — Static logo/title/badges (default hidden)
-│       ├── TeamScene.jsx              # Scene 3  — Presenter introductions
-│       ├── AgendaScene.jsx            # Scene 4  — Clickable agenda grid
-│       ├── ChallengeScene.jsx         # Scene 5  — Why search is harder than it looks
-│       ├── WhatIsSearchScene.jsx      # Scene 6  — The unified Elasticsearch search platform
-│       ├── UseCasesScene.jsx          # Scene 7  — 8 use cases across industries
-│       ├── SearchApproachesScene.jsx  # Scene 8  — Full-text, vector, semantic, hybrid, geo
-│       ├── RAGScene.jsx               # Scene 9  — RAG workflow, advantages, and build options
-│       ├── GettingStartedScene.jsx    # Scene 10 — Zero to search in 4 steps
-│       └── NextStepsScene.jsx         # Scene 11 — Free trial, docs, contact, demo link
-│
-├── elastic-agent-builder/            # Elastic Agent Builder showcase
-│   └── src/scenes/
-│       ├── HeroStaticScene.jsx        # Scene 1  — Default title slide (Elastic Agent Builder)
-│       ├── HeroScene.jsx              # Scene 2  — Animated search-bar intro (default hidden)
-│       ├── TeamScene.jsx              # Scene 3  — Presenter introductions
-│       ├── AgendaScene.jsx            # Scene 4  — Clickable agenda grid
-│       ├── ChallengeScene.jsx         # Scene 5  — Why building AI agents is hard
-│       ├── WhatIsAgentBuilderScene.jsx # Scene 6  — Platform overview: Chat, Tools, Skills, Workflows
-│       ├── ArchitectureScene.jsx      # Scene 7  — Animated flow: Data → Tools → Skills → Agent → Chat
-│       ├── CapabilitiesScene.jsx      # Scene 8  — Tabbed capabilities: Chat, Tools, Skills, Workflows
-│       ├── BuiltInSkillsScene.jsx     # Scene 9  — Domain skills: Platform, Observability, Security, Search
-│       └── NextStepsScene.jsx         # Scene 10 — Free trial, docs, contact, demo link
-│
-├── what-is-observability/            # Elastic Observability showcase
-│   └── src/scenes/
-│       ├── HeroStaticScene.jsx        # Scene 1  — Default title slide (Elastic Observability)
-│       ├── HeroScene.jsx              # Scene 2  — Animated search-bar intro (default hidden)
-│       ├── TeamScene.jsx              # Scene 3  — Presenter introductions
-│       ├── AgendaScene.jsx            # Scene 4  — Clickable agenda grid
-│       ├── ChallengeScene.jsx         # Scene 5  — Why modern observability is broken
-│       ├── WhatIsObservabilityScene.jsx # Scene 6  — Three pillars, OpenTelemetry, and AIOps
-│       ├── ArchitectureScene.jsx      # Scene 7  — Animated data flow: sources → EDOT → ES → Kibana
-│       ├── CapabilitiesScene.jsx      # Scene 8  — APM, logs, infra, digital experience, LLM obs, profiling
-│       ├── AIOpsScene.jsx             # Scene 9  — AI Assistant, anomaly detection, SLOs, alerting
-│       └── NextStepsScene.jsx         # Scene 10 — Free trial, docs, contact, demo link
-│
-└── alertzero/                        # AlertZero showcase
-    └── src/scenes/
-        ├── HeroStaticScene.jsx        # Scene 1  — Default title slide (AlertZero)
-        ├── HeroScene.jsx              # Scene 2  — Animated search-bar intro (default hidden)
-        ├── TeamScene.jsx              # Scene 3  — Presenter introductions
-        ├── AgendaScene.jsx            # Scene 4  — Clickable agenda grid
-        ├── ChallengeScene.jsx         # Scene 5  — The alert queue sets the agenda
-        ├── WhatIsAlertZeroScene.jsx   # Scene 6  — Watches, Workers, Proposed Actions, and lineage
-        ├── WatchesScene.jsx           # Scene 7  — Triage, Hunt, Detection, and Forensics Watches
-        ├── WalkthroughScene.jsx       # Scene 8  — Suspicious login session, step by step
-        ├── BeyondTriageScene.jsx      # Scene 9  — Threat hunting and rule tuning
-        ├── AutonomyScene.jsx          # Scene 10 — Manual, assisted, and supervised per Worker
-        ├── OpenByDesignScene.jsx      # Scene 11 — Any model, any environment, built-on components
-        └── NextStepsScene.jsx         # Scene 12 — Tech preview sign-up, blog, docs, demo link
 ```
+
+| Pillar | Folder | Showcase | Scenes |
+|---|---|---|--:|
+| Search | `elastic-search-ai-serverless/` | Search AI Serverless | 10 |
+| Search | `search-use-cases/` | Search Use Cases | 11 |
+| Observability | `what-is-observability/` | Elastic Observability | 10 |
+| Security | `elastic-security-overview/` | Elastic Security Overview | 11 |
+| Security | `alertzero/` | AlertZero | 12 |
+| Platform | `what-is-elastic/` | What is Elastic? | 10 |
+| Platform | `elasticsearch-serverless/` | Elastic Cloud Serverless | 9 |
+| Platform | `elastic-deployment-options/` | Elastic Deployment Options Comparison | 9 |
+| Platform | `autoops-cloud-connect/` | AutoOps via Cloud Connect | 11 |
+| Platform | `elastic-platform-workflow/` | Platform Workflows | 11 |
+| Platform | `elastic-agent-builder/` | Elastic Agent Builder | 10 |
+| Platform | `elastic-ab-skills/` | Agent Builder Skills | 10 |
+
+<details>
+<summary>Scene-by-scene reference (all 12 showcases)</summary>
+
+```
+Search AI Serverless  (elastic-search-ai-serverless/src/scenes/)
+   1. HeroScene.jsx                  Animated search-bar intro (always on)
+   2. HeroStaticScene.jsx            Static logo/title/badges (default hidden)
+   3. TeamScene.jsx                  Presenter introductions
+   4. AgendaScene.jsx                Clickable agenda grid
+   5. ChallengeScene.jsx             Infrastructure management pain points
+   6. WhatIsXScene.jsx               Elasticsearch Serverless explained
+   7. ArchitectureScene.jsx          Search AI Lake & separated compute
+   8. SearchPowerScene.jsx           On-demand, Performant, High-throughput
+   9. CapabilitiesScene.jsx          Vector search, ELSER, ES|QL, AI Playground
+  10. NextStepsScene.jsx             Free trial, docs, demo link
+
+Search Use Cases  (search-use-cases/src/scenes/)
+   1. HeroScene.jsx                  Animated search-bar intro (always on)
+   2. HeroStaticScene.jsx            Static logo/title/badges (default hidden)
+   3. TeamScene.jsx                  Presenter introductions
+   4. AgendaScene.jsx                Clickable agenda grid
+   5. ChallengeScene.jsx             Why search is harder than it looks
+   6. WhatIsSearchScene.jsx          The unified Elasticsearch search platform
+   7. UseCasesScene.jsx              8 use cases across industries
+   8. SearchApproachesScene.jsx      Full-text, vector, semantic, hybrid, geo
+   9. RAGScene.jsx                   RAG workflow, advantages, and build options
+  10. GettingStartedScene.jsx        Zero to search in 4 steps
+  11. NextStepsScene.jsx             Free trial, docs, contact, demo link
+
+Elastic Observability  (what-is-observability/src/scenes/)
+   1. HeroStaticScene.jsx            Default title slide (Elastic Observability)
+   2. HeroScene.jsx                  Animated search-bar intro (default hidden)
+   3. TeamScene.jsx                  Presenter introductions
+   4. AgendaScene.jsx                Clickable agenda grid
+   5. ChallengeScene.jsx             Why modern observability is broken
+   6. WhatIsObservabilityScene.jsx   Three pillars, OpenTelemetry, and AIOps
+   7. ArchitectureScene.jsx          Animated data flow: sources → EDOT → ES → Kibana
+   8. CapabilitiesScene.jsx          APM, logs, infra, digital experience, LLM obs, profiling
+   9. AIOpsScene.jsx                 AI Assistant, anomaly detection, SLOs, alerting
+  10. NextStepsScene.jsx             Free trial, docs, contact, demo link
+
+Elastic Security Overview  (elastic-security-overview/src/scenes/)
+   1. HeroScene.jsx                  Animated search-bar intro (always on)
+   2. HeroStaticScene.jsx            Static logo/title/badges (default hidden)
+   3. TeamScene.jsx                  Presenter introductions
+   4. AgendaScene.jsx                Clickable agenda grid
+   5. ChallengeScene.jsx             Security industry taxes and fragmentation
+   6. WhatIsElasticSecurityScene.jsx Unified SIEM, XDR & agentic AI platform
+   7. ArchitectureScene.jsx          Animated data-to-action flow
+   8. CapabilitiesScene.jsx          Detect, respond, protect (tabbed)
+   9. IntegrationsScene.jsx          Cloud, endpoint, identity, network connectors
+  10. ProofPointsScene.jsx           Customer stats & industry recognition
+  11. NextStepsScene.jsx             Free trial, docs, contact, demo link
+
+AlertZero  (alertzero/src/scenes/)
+   1. HeroStaticScene.jsx            Default title slide (AlertZero)
+   2. HeroScene.jsx                  Animated search-bar intro (default hidden)
+   3. TeamScene.jsx                  Presenter introductions
+   4. AgendaScene.jsx                Clickable agenda grid
+   5. ChallengeScene.jsx             The alert queue sets the agenda
+   6. WhatIsAlertZeroScene.jsx       Watches, Workers, Proposed Actions, and lineage
+   7. WatchesScene.jsx               Triage, Hunt, Detection, and Forensics Watches
+   8. WalkthroughScene.jsx           Suspicious login session, step by step
+   9. BeyondTriageScene.jsx          Threat hunting and rule tuning
+  10. AutonomyScene.jsx              Manual, assisted, and supervised per Worker
+  11. OpenByDesignScene.jsx          Any model, any environment, built-on components
+  12. NextStepsScene.jsx             Tech preview sign-up, blog, docs, demo link
+
+What is Elastic?  (what-is-elastic/src/scenes/)
+   1. HeroScene.jsx                  Animated search-bar intro (always on)
+   2. HeroStaticScene.jsx            Static logo/title/badges (default hidden)
+   3. TeamScene.jsx                  Presenter introductions
+   4. AgendaScene.jsx                Clickable agenda grid
+   5. ChallengeScene.jsx             Data silos and fragmented tooling pain
+   6. WhatIsElasticScene.jsx         The Search AI Platform explained
+   7. ArchitectureScene.jsx          The Elastic Stack: Ingest, Store, Explore
+   8. SolutionsScene.jsx             Elasticsearch, Observability, Security
+   9. DeploymentScene.jsx            Serverless, Cloud Hosted, Self-Managed
+  10. NextStepsScene.jsx             Free trial, docs, contact, demo link
+
+Elastic Cloud Serverless  (elasticsearch-serverless/src/scenes/)
+   1. HeroScene.jsx                  Title & intro
+   2. TeamScene.jsx                  Presenter introductions
+   3. AgendaScene.jsx                Clickable agenda grid
+   4. ChallengeScene.jsx             Infrastructure management pain
+   5. WhatIsServerlessScene.jsx      Overview & architecture
+   6. BenefitsScene.jsx              6 key benefits
+   7. ProjectTypesScene.jsx          Search, Observability, Security
+   8. ComparisonScene.jsx            Serverless vs Cloud Hosted table
+   9. NextStepsScene.jsx             Trial, docs, demo link
+
+Elastic Deployment Options Comparison  (elastic-deployment-options/src/scenes/)
+   1. HeroScene.jsx                  Title & intro
+   2. TeamScene.jsx                  Presenter introductions
+   3. AgendaScene.jsx                Clickable agenda grid
+   4. ChallengeScene.jsx             Why choosing wrong model costs you
+   5. DeploymentOverviewScene.jsx    Three ways to run Elastic
+   6. SharedResponsibilityScene.jsx  Who owns what (interactive matrix)
+   7. FeatureComparisonScene.jsx     Feature availability by deployment
+   8. WhenToChooseScene.jsx          Decision guide for each model
+   9. NextStepsScene.jsx             Trial, docs, contact
+
+AutoOps via Cloud Connect  (autoops-cloud-connect/src/scenes/)
+   1. HeroScene.jsx                  Title & intro
+   2. TeamScene.jsx                  Presenter introductions
+   3. AgendaScene.jsx                Clickable agenda grid
+   4. ChallengeScene.jsx             The problem being solved
+   5. WhatIsAutoOpsScene.jsx         AutoOps explained
+   6. CloudConnectScene.jsx          What is Cloud Connect
+   7. ArchitectureScene.jsx          Animated data flow
+   8. InstallationScene.jsx          4 install methods + diagrams
+   9. MonitoringScene.jsx            What AutoOps monitors
+  10. NotificationsScene.jsx         7 notification connectors
+  11. NextStepsScene.jsx             CTAs, checklist, demo link
+
+Platform Workflows  (elastic-platform-workflow/src/scenes/)
+   1. HeroScene.jsx                  Animated search-bar intro (always on)
+   2. HeroStaticScene.jsx            Static logo/title/badges (default hidden)
+   3. TeamScene.jsx                  Presenter introductions
+   4. AgendaScene.jsx                Clickable agenda grid
+   5. ChallengeScene.jsx             Alert fatigue, tool fragmentation, manual work
+   6. WhatIsWorkflowsScene.jsx       YAML-defined automation in Kibana
+   7. ArchitectureScene.jsx          Triggers, steps, data flow, outcomes
+   8. CapabilitiesScene.jsx          Action, flow control, and AI steps (tabbed)
+   9. UseCasesScene.jsx              Security, observability, AI-augmented patterns
+  10. InstallationScene.jsx          Enable in Kibana + configure privileges
+  11. NextStepsScene.jsx             Docs, first workflow, contact, demo link
+
+Elastic Agent Builder  (elastic-agent-builder/src/scenes/)
+   1. HeroStaticScene.jsx            Default title slide (Elastic Agent Builder)
+   2. HeroScene.jsx                  Animated search-bar intro (default hidden)
+   3. TeamScene.jsx                  Presenter introductions
+   4. AgendaScene.jsx                Clickable agenda grid
+   5. ChallengeScene.jsx             Why building AI agents is hard
+   6. WhatIsAgentBuilderScene.jsx    Platform overview: Chat, Tools, Skills, Workflows
+   7. ArchitectureScene.jsx          Animated flow: Data → Tools → Skills → Agent → Chat
+   8. CapabilitiesScene.jsx          Tabbed capabilities: Chat, Tools, Skills, Workflows
+   9. BuiltInSkillsScene.jsx         Domain skills: Platform, Observability, Security, Search
+  10. NextStepsScene.jsx             Free trial, docs, contact, demo link
+
+Agent Builder Skills  (elastic-ab-skills/src/scenes/)
+   1. HeroScene.jsx                  Animated search-bar intro (always on)
+   2. HeroStaticScene.jsx            Static logo/title/badges (default hidden)
+   3. TeamScene.jsx                  Presenter introductions
+   4. AgendaScene.jsx                Clickable agenda grid
+   5. ChallengeScene.jsx             Copy-paste expertise, bloated prompts pain
+   6. WhatIsSkillsScene.jsx          Skills explained: knowledge, tools, selective loading
+   7. HowSkillsWorkScene.jsx         Dynamic skill selection & activation flow
+   8. BuiltInSkillsScene.jsx         Platform, Observability, Security, Elasticsearch skills
+   9. CustomSkillsScene.jsx          Fields, workflow, best practices for custom skills
+  10. NextStepsScene.jsx             Trial, docs, custom skills guide, contact
+```
+
+</details>
 
 ---
 
 ## Running Locally
 
-Each showcase is an independent project. Run from its own directory:
+Each showcase is an independent project. Pick a folder from the table above:
 
 ```bash
-# AutoOps via Cloud Connect
-cd autoops-cloud-connect
-npm install
-npm run dev
-
-# Elastic Cloud Serverless
-cd elasticsearch-serverless
-npm install
-npm run dev
-
-# Elastic Deployment Options Comparison
-cd elastic-deployment-options
-npm install
-npm run dev
-
-# Search AI Serverless
-cd elastic-search-ai-serverless
-npm install
-npm run dev
-
-# Agent Builder Skills
-cd elastic-ab-skills
-npm install
-npm run dev
-
-# Elastic Security Overview
-cd elastic-security-overview
-npm install
-npm run dev
-
-# Platform Workflows
-cd elastic-platform-workflow
-npm install
-npm run dev
-
-# What is Elastic?
-cd what-is-elastic
-npm install
-npm run dev
-
-# Search Use Cases
-cd search-use-cases
-npm install
-npm run dev
-
-# Elastic Agent Builder
-cd elastic-agent-builder
-npm install
-npm run dev
-
-# Elastic Observability
-cd what-is-observability
-npm install
-npm run dev
-
-# AlertZero
-cd alertzero
+cd <folder>        # e.g. cd alertzero
 npm install
 npm run dev
 ```
@@ -422,7 +412,7 @@ Every showcase built from `_template/` follows this opening sequence:
    npm run build
    ```
 
-7. **Update this README** — add a row to the Live Showcases table and the showcase's folder/scenes to the Project Structure tree.
+7. **Update this README** — pick the showcase's pillar (Search, Observability, Security, or Platform), then: add its name to that pillar's column in the Live Showcases grid, add a row to that pillar's collapsible table, and add a row to the folder table (plus its scene list in the "Scene-by-scene reference") under Project Structure.
 
 8. **Commit and push:**
    ```bash
@@ -523,7 +513,7 @@ Or naturally in conversation:
 2. Scaffolds a new project from `_template/`
 3. Generates all scene files (Hero, Team, Agenda, Challenge, Architecture, Capabilities, Next Steps, and more)
 4. Wires navigation, builds, and verifies zero errors
-5. **Updates this README** — adds the new showcase to the Live Showcases table and Project Structure tree
+5. **Updates this README** — adds the new showcase under its pillar (Search / Observability / Security / Platform) in Live Showcases and Project Structure
 6. Pushes to GitHub → Vercel auto-deploys within ~60 seconds
 
 **One manual step after generation:** Create a new Vercel project pointing to the new subfolder and update the Vercel URL in this README.
